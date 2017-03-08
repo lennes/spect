@@ -1,0 +1,21 @@
+#-------------
+# This procedure finds the number of a tier that has a given label.
+
+procedure GetTier name$ variable$
+        numberOfTiers = Get number of tiers
+        itier = 1
+        repeat
+                tier$ = Get tier name... itier
+                itier = itier + 1
+        until tier$ = name$ or itier > numberOfTiers
+        if tier$ <> name$
+                'variable$' = 0
+        else
+                'variable$' = itier - 1
+        endif
+
+	if 'variable$' = 0
+		printline The tier called 'name$' is missing!
+	endif
+
+endproc
