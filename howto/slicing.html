@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><meta name="author" content="Mietta Lennes"><title>How to extract many small files out of a long sound file with Praat</title></head><body>
+<h1>How to extract many small files out of a long sound file</h1>
+<h2><a href="http://www.praat.org/">with the Praat program</a>
+</h2>
+<h4><a href="pilkkominen.html">Suomeksi, kiitos</a>
+<br>
+</h4>
+<h4>Mietta Lennes<br>23.9.2002</h4>
+<br>
+These instructions should help you to extract loads of small sound files from a long sound file - relatively painlessly. <br>
+<br>
+<b>Result:</b> you will get either <b>sound files named with running index numbers</b> or<b> files with special labels</b>. (The latter option is easy to handle if you have a list of the words or sentences that the speaker has read aloud.)<br><b>Requirements: </b>you should open the long sound file in&nbsp;<a href="http://www.praat.org/">Praat </a>
+ as a LongSound object.<ol><li>Mark the boundaries of the intervals that you want to extract into a TextGrid object. One IntervalTier is enough.<br>
+(Select the LongSound object in the object list. Create a TextGrid object for it by pressing the <b>To TextGrid...</b> button to the right.)<br>
+    <br>
+    <ul>
+      <li>You may find the script <a 
+href="../public/mark_pauses.praat">mark_pauses.praat</a>
+ helpful. This script looks for quiet regions in the LongSound on the basis
+of an intensity analysis, and marks them as pauses according to the criteria
+you define (upper limit for intensity, minimum duration of the quiet region).
+If the pause parameters are conveniently defined and if the recording is
+of sufficiently good quality, this script may be able to segment the utterances
+quite well and save you hours of work. You should test the criteria in advance
+and try to find the most suitable ones. However, the script is rather slow
+- be prepared to take a coffee break...<br>
+      </li>
+    </ul>
+    <br>
+  </li>
+
+  <li>a) If you do not know precisely what the contents of each interval
+are (e.g., the list of words read by the speaker), but you wish to keep this
+information in the file names (see 4 b below), you should simply listen and
+type the file names to the intervals in the TextGrid.<br>
+    <br> b) If you happen to have a text file that contains, e.g., the sentences
+read by the speaker (one sentence per line), you can use the script     <a href="../public/label_from_text_file.praat">label_from_text_file.praat</a>
+ , which reads the text file line by line and adds the text to the intervals
+marked in the TextGrid. Note: if every other interval is a pause, you must
+add empty lines to the text file (or, alternatively, mark all pauses with
+'xxx' in the TextGrid. The mark_pauses.praat script can do this for you).
+<br>
+    <b>If you like to make things very semi-automatic:</b> In case the intervals
+you marked do not fully correspond to the text file (e.g., the speaker has
+repeated or mispronounced some sentences), it is a good thing to check from
+the TextGrid, where exactly the labeling starts to go wrong. Then, you can
+edit the text file or the boundaries in the TextGrid accordingly, and run
+the label-script again. If this happens often, you can use the faster version
+of the script: <a 
+href="../public/label_quickly_from_text_file.praat">label_quickly_from_text_file.praat</a>
+  (you have to edit the text file path directly to the script file). You
+could even create a button for the script to the Object list. This way, you
+will only have to press one single button to update the new labels to the
+TextGrid.<br>
+    <br> c) If you do not care about the file names or saving some special
+labels, just type anything (even just one character) to each interval that
+you want saved. Leave those intervals empty that you do not want to save.
+(You can also skip the typing, if you really want to save all intervals,
+including pauses etc.)<br>
+    <br>
+  </li>
+  <li>Save the TextGrid, just in case. (You may also find it useful for other purposes.)<br>
+    <br>
+  </li>
+  <li>Select the original LongSound object and the TextGrid object together.</li>
+</ol>
+<blockquote><b>
+a) If you want the small files to be named with a running index number</b> 
+(and the file extension .aiff- or .wav), run the Praat script <a 
+href="../public/save_intervals_to_wav_sound_files.praat">save_intervals_to_wav_sound_files.praat</a>
+
+
+ (makes WAV files), or alternatively <a 
+href="../public/save_intervals_to_aiff_sound_files.praat">save_intervals_to_aiff_sound_files.praat</a>
+
+ (makes AIFF files). You can even give affixes to the file names (e.g., a certain prefix for a certain speaker's files).<br>
+  </blockquote>
+
+    
+  <blockquote><b>
+  b) If you want the small files to be named after the correponding 
+segment labels in the TextGrid: </b>use the Praat script <a 
+href="../public/save_labeled_intervals_to_wav_sound_files.praat">save_labeled_intervals_to_wav_sound_files.praat</a>
+&nbsp;(makes WAV files) or <a 
+href="../public/save_labeled_intervals_to_aiff_sound_files.praat">save_labeled_intervals_to_aiff_sound_files.praat</a>
+ (makes AIFF files). You can even give affixes to the file names (e.g., a
+certain prefix for a certain speaker's files). If there are several intervals
+with an identical label string, these files will receive an additional running
+index number to prevent overwriting. However, you have to make sure that the interval labels do not contain illegal characters or excessively long strings.<br>
+    </blockquote>
+<br>
+<div align="Center"><b>AND YOU'RE DONE! :-)</b><br>
+<br>
+<a href="../index.html">More Praat scripts</a><br>
+</div>
+</body></html>

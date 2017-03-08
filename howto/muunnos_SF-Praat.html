@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><meta name="author" content="Mietta Lennes">
+<title>SoundForge-ohjelmalla tehdyn litteraation muuntaminen Praat-ohjelman TextGrid-tiedostoksi</title>
+</head><body>
+
+<h1>SoundForgella tehdyn nimikoinnin muuntaminen<BR> 
+<a href="http://www.praat.org/">Praatin</a> TextGrid-tiedostoksi</h1>
+
+<h4><a href="convert_SF-Praat.html">In English, please</a>
+<br>
+</h4>
+<h4>Mietta Lennes<br>25.3.2004</h4>
+<br>
+
+<H3>SoundForge vs. Praat</H3>
+<p><A HREF="http://www.soundforge.com/">SoundForge</A>-ohjelmassa on mahdollisuus merkit&auml; k&auml;sitelt&auml;v&auml;&auml;n &auml;&auml;ni- tai videotiedostoon nimettyj&auml; alueita (<I>Region</I>) sek&auml; merkkiviivoja (<I>Marker</I>) eri aikapisteisiin. N&auml;iden avulla voidaan esimerkiksi litteroida tai muulla tavalla nimikoida ts. annotoida puheaineistoa. SoundForgessa on mahdollisuus avata my&ouml;s erilaisia videotiedostoja ja annotoida niiss&auml; olevaa kuvaa ja &auml;&auml;nt&auml; yht&auml; aikaa. Videota ei t&auml;ll&auml; hetkell&auml; voi k&auml;sitell&auml; esimerkiksi <A HREF="http://www.praat.org/">Praat</A>-ohjelmalla, joka muutoin paremmin sopisi puheentutkijan k&auml;ytt&ouml;tarkoituksiin. 
+
+<P>SoundForge-ohjelmalla ei kuitenkaan voi tehd&auml; sellaisia analyyseja tai piirt&auml;&auml; sellaisia kuvia, joita puheentutkija usein tarvitsee. Siksi voi olla k&auml;yt&auml;nn&ouml;llinen vaihtoehto tehd&auml; ensin SoundForgella esim. videon litteraatio (tai alustava &auml;&auml;nitiedoston litteraatio, jos on tottunut SoundForgen k&auml;ytt&ouml;&ouml;n), ja sitten muuntaa SoundForgella tehty litteraatio <A HREF="http://www.praat.org/">Praat</A>in k&auml;ytt&auml;m&auml;&auml;n TextGrid-muotoon, jolloin tutkimusty&ouml;t&auml; voi jatkaa ja tarkentaa Praatin avulla.  
+
+<P>Huom. Praatilla voi ilman v&auml;livaiheita avata samoja WAV- tai AIFF-&auml;&auml;nitiedostoja, joita SoundForgellakin todenn&auml;k&ouml;isesti k&auml;sitell&auml;&auml;n. SoundForgella voi my&ouml;s erottaa esimerkiksi videotiedostosta pelk&auml;n &auml;&auml;niraidan erilliseen &auml;&auml;nitiedostoon. Kun pid&auml;t huolen siit&auml;, ett&auml; sek&auml; alkuper&auml;inen videotiedosto, siit&auml; tehty &auml;&auml;nitiedosto sek&auml; annotaatio- eli litteraatiotiedostot pysyv&auml;t kukin ajallisesti samankestoisina, voit analysoida n&auml;it&auml; kaikkia rinnakkain ja tekem&auml;si nimikointi p&auml;tee samalla kaikkiin. (T&auml;ss&auml; tapauksessa ei ole j&auml;rkev&auml;&auml;k&auml;&auml;n pilkkoa &auml;&auml;nitiedostoja kovin pieniin palasiin, koska niit&auml; on helpompi hallita nimikointien avulla.)
+
+<H3>Kuinka muunnat SoundForge-ohjelmalla tehdyn litteraation Praat-ohjelman TextGrid-tiedostoksi</H3>
+
+
+<p>Huom. T&auml;ll&auml; hetkell&auml; ao. Praat-skripti ei huomioi lainkaan SoundForgella tehtyj&auml; merkkiviivoja (Marker), vaan ainoastaan SoundForgella merkityt alueet (Region) siirtyv&auml;t Praatin TextGridiin. Tulevassa skriptiversiossa my&ouml;s Markerit siirret&auml;&auml;n omaan TextGrid-kerrokseensa!
+
+<P>Toinen huomautus: SoundForgella merkittyjen alueiden (Region) rajojen ajallinen tarkkuus on 0.1 sekuntia (100 ms). SoundForgella ei siis voi tehd&auml; kovin tarkkaa foneettista nimikointia, sill&auml; rajat voivat "heitt&auml;&auml;" jopa parilla-kolmella &auml;&auml;nteell&auml;. Rajojen paikkoja kannattaakin tarvittaessa Praatilla tarkentaa. SoundForgen Marker-merkkiviivojen tarkkuus taitaa tosin olla hieman parempi. 
+
+<h4>Vaihe 1</h4>
+<UL>
+Jos sinulla ei viel&auml; ole omalla koneellasi Praat-skriptitiedostoa nimelt&auml;<BR>
+<B><A HREF="http://www.helsinki.fi/~lennes/praat-scripts/public/convert_SoundForge_to_Praat_TextGrid.praat">convert_SoundForge_to_Praat_TextGrid.praat</A></B><BR>
+niin sinun pit&auml;&auml; ensin ladata se koneellesi: klikkaa yll&auml;olevaa skriptin nime&auml; hiiren oikealla napilla ja valitse valikosta <B>Save target as...</B>
+Tallenna skriptitiedosto omalle koneellesi johonkin sopivaan paikkaan, josta l&ouml;yd&auml;t sen helposti.
+</UL>
+
+<h4>Vaihe 2</h4>
+Kun sinulla jo on omalla koneellasi kyseinen Praat-skriptitiedosto, toimi seuraavasti:
+
+<UL>
+<LI>Avaa SoundForge-ohjelma. Avaa SoundForgeen se &auml;&auml;nitiedosto, jolle olet tehnyt litteraation.
+<LI>&Auml;&auml;nitiedosto pit&auml;&auml; tallentaa uudestaan tietyss&auml; muodossa, jotta sen voi muuntaa Praatin TextGrid-tiedostoksi:<BR>
+Valitse SoundForge-ohjelmassa <B>File</B>-valikosta <B>Save As...</B> Seuraavana avautuvan valintalaatikon alalaidassa on valinta, jonka vasemmalla puolella lukee <B>Rgns/Playlist: </B><BR>
+Valitse sen vieress&auml; olevasta pudotusvalikosta kohta 
+<B>Save as Windows Media Script .TXT files</B>. 
+Voit tallentaa &auml;&auml;nitiedoston samaan paikkaan vanhan p&auml;&auml;lle tai johonkin tilap&auml;iseen paikkaan. Jos tallennat vanhan p&auml;&auml;lle, varmista ett&auml; sinulla on siit&auml; varmuuskopio, jos jotakin sattuisi menem&auml;n vikaan.<BR>
+Etsi haluamasi hakemisto ja paina OK. Tiedostot tallentuvat. 
+<LI><I>Samaan hakemistoon tallentuu nyt lis&auml;ksi .txt-p&auml;&auml;tteinen tekstitiedosto!</I> Tekstitiedoston nimen alkuosa on sama kuin &auml;&auml;nitiedoston nimen alkuosa. T&auml;m&auml; .txt-p&auml;&auml;tteinen tiedosto sis&auml;lt&auml;&auml; kaikki SoundForgella tehtyjen merkint&ouml;jen paikat &auml;&auml;nisignaalissa. Seuraavaksi tekstitiedosto muunnetaan Praatin TextGrid-tiedostoksi. <BR>Merkitse muistiin tekstitiedoston tarkka hakemistopolku, sill&auml; tarvitset sit&auml; kun suoritat Praatilla muunnosskriptin. Jos esim. litteroimasi &auml;&auml;nitiedosto sijaitsee Windowsin D-asemalla alihakemistossa Testit ja &auml;&auml;nitiedoston nimi on litteraatiokoe.wav, niin tiedoston koko hakemistopolku on<BR>
+D:\Testit\litteraatiokoe.txt
+<BR><BR>
+<LI>Avaa Praat-ohjelma.
+<LI>Avaa Praatiin (verkosta hakemasi) skripti, jolla SoundForgella tallennettu tiedosto muunnetaan:<BR>
+Valitse <B>Objects</B>-ikkunan <B>Control</B>-valikosta <B>Open Praat script...</B><BR>
+Etsi koneeltasi aiemmin verkosta hakemasi Praat-skripti nimelt&auml; <B>
+convert_SoundForge_to_Praat_TextGrid.praat</B>.
+Paina OK ja skripti avautuu.
+<LI>Valitse skripti-ikkunan <B>Run</B>-valikosta komento <B>Run</B>.
+<LI>Kirjoita nyt aukeavaan valintaikkunaan sen .txt-p&auml;&auml;tteisen tiedoston tarkka hakemistopolku, joka pit&auml;&auml; muuntaa (esim. D:\Testit\litteraatiokoe.txt). <BR>
+<LI>Valitse lis&auml;ksi hakemistopolun alla olevasta pudotusvalikosta joko <B>.wav</B> tai <B>.aif</B> sen mukaan, kummassa muodossa litteraatiota vastaava &auml;&auml;nitiedosto on. (Valitettavasti t&auml;m&auml; skripti ei ilman muutoksia toimi muunp&auml;&auml;tteisill&auml; &auml;&auml;nitiedostoilla.)
+<LI>Paina OK.<BR>
+Skripti muuntaa tekstitiedoston ja tallentaa samaan hakemistoon samannimisen, mutta .TextGrid-p&auml;&auml;tteisen tiedoston. <BR>
+Huom. Praat-skriptin k&auml;yt&ouml;ss&auml; voi tulla ongelmia, jos tekstitiedoston nimess&auml; tai hakemistopolussa on v&auml;lily&ouml;ntej&auml;. Turvallisinta on pyrki&auml; k&auml;ytt&auml;m&auml;&auml;n hakemistojen tai tiedostojen nimi&auml;, joissa ei ole v&auml;lej&auml;. Jos v&auml;lily&ouml;ntej&auml; on, kirjoita tiedostopolku lainausmerkkien sis&auml;&auml;n (esim. "D:\Ekat testit\litteraatiokoe.txt").<BR>
+<LI>&Auml;&auml;niobjekti ja TextGrid-objekti j&auml;&auml;v&auml;t avoimiksi Praatiin, joten voit vaikka heti tarkistaa, onnistuiko siirto: valitse kumpikin objekti yht&auml; aikaa listalta ja paina <B>Edit</B>.<BR><BR>
+<LI>Seuraavalla ty&ouml;skentelykerralla voit avata Praatissa sek&auml; alkuper&auml;isen &auml;&auml;nitiedoston ett&auml; sen rinnalle tehdyn TextGrid-tiedoston. Sitten vain jatkamaan litterointia ja analyyseja Praatilla! Muista tallentaa TextGrid, kun teet Praatilla litteraatioon muutoksia.
+<LI>Jos talletit SoundForgella &auml;&auml;ni- ja tekstitiedoston eri paikkaan kuin alkuper&auml;isen &auml;&auml;nitiedoston, voit tarvittaessa poistaa &auml;&auml;nitiedoston kaksoiskappaleen. Tarvitset en&auml;&auml; vain yhden &auml;&auml;nitiedoston ja sit&auml; vastaavan TextGrid-tiedoston. <BR>
+Tiedostot on helpointa pit&auml;&auml; samassa hakemistossa, jotta ne l&ouml;ytyv&auml;t helposti. Pid&auml; my&ouml;s tiedostojen nimien alkuosa samana, jotta tunnistat, mik&auml; TextGrid liittyy mihinkin &auml;&auml;nitiedostoon.
+
+<P>
+<P><a href="http://www.helsinki.fi/puhetieteet/atk/praat/">Suomenkieliseen Praat-oppaaseen</a>
+<br>
+<br>
+<a href="../index.html">Lis&auml;&auml; Praat-skriptej&auml;</a>
+<br>
+</div>
+</body></html>

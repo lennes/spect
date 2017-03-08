@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="author" content="Mietta Lennes">
+<title>Praat-ohjelmalla annotoidun keskustelun litteraatin vieminen tekstitiedostoon</title></head><body>
+<h2><a href="http://www.praat.org/">Praat-ohjelmalla</a> annotoidun keskustelun litteraatin vieminen tekstitiedostoon</h2>
+
+<br>
+<table border="0" align="center" cellspace="20" cellpadding="0" width="100%">
+<tr>
+<td valign="top">
+
+<h4><a href="conversation_transcript.html">In English, please</a>
+<br>
+</h4>
+<h4>Mietta Lennes<br>30.12.2009</h4>
+
+<ul><p><b>
+<li><A HREF="#esittely">Johdanto</A>
+<li><A HREF="#esimerkki">Esimerkki</a>
+<li><A HREF="#ohje">K&auml;ytt&ouml;ohje</a>
+</b>
+<p><<a href="../index.html">Muita Praat-skriptej&auml;</a>
+
+</ul>
+</td>
+
+<td valign="top" width="405"><A HREF="#esimerkki">
+<img src="conversation_example_TextGrid.gif" width="400" alt="An example picture of a conversation annotated with Praat." border="0"></a>
+
+</td>
+<td valign="top"><br><br><H1>&rarr;</H1></td>
+<td valign="top"><pre style="font-size:10px">
+conversation_example_1	(Tue Dec 29 17:05:15 2009)
+
+F1:	blah
+F2:	bli bla bla blaah
+F1:	bla blaaba blah bli
+F2:	blaaaaa
+F1:	blabla
+F2:	blee blaa blabla blaah
+F1:	bla
+F2:	blaba blaa
+F1:	blah blaaba blaaba blaaba blaa
+F2:	blabla
+F1:	bla bla-
+	blaah
+F2:	bli bla bla bla bli bla bla
+F1:	blabl-
+	bla bla bla bla bla blaaaaah
+</pre>
+</td>
+</tr>
+</table>
+
+
+<br>
+
+<A NAME="esittely"></A>
+<p><b>Huom. T&auml;ss&auml; kuvattu Praat-skripti on vasta testik&auml;yt&ouml;ss&auml; ja saattaa siis sis&auml;lt&auml;&auml; virheit&auml;! Jos skripti ei mielest&auml;si toimi oikein tai huomaat t&auml;ss&auml; ohjeessa puutteita, otan mielell&auml;ni <A HREF="http://www.helsinki.fi/~lennes/">s&auml;hk&ouml;postitse</A> vastaan korjausehdotuksia. 
+<br><i>Valitettavasti en kuitenkaan voi tarjota henkil&ouml;kohtaista neuvontaa skriptin k&auml;yt&ouml;ss&auml;!</b></i>
+
+
+<br><p><br>
+<h3>Johdanto</h3>
+
+<p>Jos olet nimikoinut (annotoinut) keskustelu&auml;&auml;nitteen <a href="http://www.praat.org/">Praat-ohjelmalla</A>, voit <A HREF="#ohje">oheisen Praat-skriptin</A> avulla siirt&auml;&auml; tekem&auml;si litteraatin Praatin TextGrid-objektista tavalliseen tekstitiedostoon, jota voit edelleen muokata ja k&auml;ytt&auml;&auml; helposti tulostettavana aineistosi sis&auml;ll&ouml;n tekstimuotoisena kuvauksena tai esimerkiksi esitelmiss&auml; tai julkaisuissa.<br>
+Samalla skriptill&auml; voit keskustelulitteraattien lis&auml;ksi vied&auml; helposti luettavaan muotoon mit&auml; tahansa muutakin Praatilla nimikoitua aineistoa. T&auml;ss&auml; ohjeessa k&auml;ytet&auml;&auml;n esimerkkin&auml; keskustelupuhetta.
+
+<p>
+<b>Esivaatimuksena</b> on, ett&auml; sinulla on <a href="http://www.praat.org/">Praat-ohjelman</a> objektilistalla valittuna t&auml;sm&auml;lleen yksi TextGrid-muotoinen objekti, joka sis&auml;lt&auml;&auml; kunkin keskusteluun osallistuvan puhujan puhunnokset rajattuina ja litteroituina omaan nimikointikerrokseensa (<em>tier</em>). TextGridiss&auml; on siis oltava (v&auml;hint&auml;&auml;n) yht&auml; monta kerrosta kuin keskustelussa on osallistujia.<br>
+
+<p><b>Lopputuloksena </b>on <b>raakatekstitiedosto</b>, jossa on kunkin keskusteluun osallistuneen puhujan puhunnokset omilla riveill&auml;&auml;n alkamisaikojen mukaisessa j&auml;rjestyksess&auml;. Puhujan vaihtuessa rivin alkuun tulee automaattisesti puhujan tunnus. Kokonaan p&auml;&auml;llekk&auml;ispuhutut puhunnokset merkit&auml;&auml;n hakasulkeisiin. Puhunnosten v&auml;liin voidaan my&ouml;s automaattisesti laskea ja merkit&auml; sulkeisiin taukojen kestot sekunteina. Lis&auml;ksi voidaan laskea my&ouml;s mahdollisen p&auml;&auml;llekk&auml;ispuhunnan alkamisaika suhteessa edelt&auml;v&auml;n puhunnoksen p&auml;&auml;ttymiseen sekunteina. T&auml;m&auml; merkit&auml;&auml;n sulkeisiin samoin kuin tauon kesto, mutta luku on negatiivinen, esim. (-0.20 s) tarkoittaa, ett&auml; seuraava puhunnos on puhuttu edellisen puhujan p&auml;&auml;lle ja se on alkanut 0,2 sekuntia ennen edelt&auml;v&auml;n puhunnoksen p&auml;&auml;ttymist&auml;.
+
+<p><b>Miksi keskustelupuhetta kannattaa litteroida Praatilla?</b>
+<ul>
+<li>Pienen harjoittelun j&auml;lkeen puheaineiston litteroiminen Praatilla on helppoa ja nopeaa, sill&auml; &auml;&auml;nitiedostosta voidaan toistuvasti kuunnella halutun pituisia p&auml;tki&auml; (ks. <a href="http://www.helsinki.fi/puhetieteet/atk/praat/">suomenkielinen Praat-opas</a>: 6. Nimikointi).
+<li>Puheaineistojen tutkimuksessa on t&auml;rke&auml;&auml;, ett&auml; alkuper&auml;iseen &auml;&auml;nimateriaaliin voidaan tarvittaessa vedota. Oheista Praat-skripti&auml; k&auml;ytt&auml;m&auml;ll&auml; tutkija voi hy&ouml;dynt&auml;&auml; rinnakkain sek&auml; &auml;&auml;nimateriaalia ett&auml; sen helpommin luettavaa tekstimuotoista kuvausta.
+<li>Kun peruslitteraatti on tehty Praatilla ja tekstimuotoiseen litteraattiin lis&auml;t&auml;&auml;n puhunnosten alkamisajat alkuper&auml;isess&auml; &auml;&auml;nitiedostossa, l&ouml;ytyy haluttu kohta &auml;&auml;nimateriaalista helposti viel&auml; j&auml;lkik&auml;teen.
+<li>Praatilla valmiiksi rajattu ja nimikoitu puhunnos tai muu katkelma on helppo koska tahansa kuunnella uudelleen.
+<li>Praatilla tehty litteraatti rohkaisee tutkijaa my&ouml;s k&auml;ytt&auml;m&auml;&auml;n erilaisia akustisia mittaus- ja kuvantamismenetelmi&auml;. Litteraatin t&auml;ydennykseksi voidaan esimerkiksi kuvantaa tarkasti keskustelun&auml;ytteen tiettyyn kohtaan liittyvi&auml; akustis-foneettisia ilmi&ouml;it&auml;.
+<ul><b>Huom. Akustisten mittausten tekeminen ja asianmukainen tulkinta vaatii riitt&auml;v&auml;n hyv&auml;laatuista ja tarpeeksi h&auml;lyt&ouml;nt&auml; &auml;&auml;nitallennetta sek&auml; perehtymist&auml; k&auml;ytettyyn analyysimenetelm&auml;&auml;n ja sen foneettisiin taustatekij&ouml;ihin.</b> Esimerkiksi puheen s&auml;velkulkuun ja intonaatioon liittyv&auml;&auml; perustaajuusk&auml;yr&auml;&auml; (Praatissa <b>Pitch</b>) voidaan vahingossa k&auml;ytt&auml;&auml; tai tulkita v&auml;&auml;rin, jollei perustaajuusanalyysin rajoituksia tunneta tai jollei analyysin asetuksia ole m&auml;&auml;ritetty ko. n&auml;ytteelle/puhujalle sopiviksi. Lis&auml;tietoa l&ouml;ytyy esim. <a href="http://www.helsinki.fi/puhetieteet/atk/praat/">Praat-oppaasta</a> ja Praat-ohjelman sis&auml;isilt&auml; manuaalisivuilta (<b>Help</b>).</ul>
+<li>Puhunnoskerrosten lis&auml;ksi keskustelu&auml;&auml;nitteen annotaatioon voidaan lis&auml;t&auml; haluttu m&auml;&auml;r&auml; muitakin nimikointikerroksia esim. paralingvistisi&auml; ilmi&ouml;it&auml;, &auml;&auml;nenlaatua tai sekalaisia kommentteja varten. Tarvittaessa aineiston akustis-foneettista analyysia voidaan tarkentaa ja syvent&auml;&auml; lis&auml;&auml;m&auml;ll&auml; annotaatioon esimerkiksi sana- ja &auml;&auml;nnekerrokset, joita nimikoidaan halutuilta osin. Tarkkoja segmentointeja voidaan k&auml;ytt&auml;&auml; esimerkiksi tiettyjen mittauspisteiden m&auml;&auml;ritt&auml;miseen ja muistiinmerkitsemiseen tai kuvien piirt&auml;miseen.  
+<li>Kaikki muutokset ja korjaukset kannattaa tehd&auml; alkuper&auml;iseen Praatin TextGrid-tiedostoon, josta voi aina halutessaan tuottaa skriptill&auml; uusia tekstiversioita.
+</ul>
+
+<A NAME="esimerkki"></A>
+<h3>Esimerkki</h3>
+
+<p>Kuvitellaan, ett&auml; Praatilla on nimikoitu seuraavanlainen keskustelun&auml;yte, jossa esiintyy kaksi puhujaa (<i>F1</i> ja <i>F2</i>):
+
+<p>
+<img src="conversation_example_TextGrid.gif" width="900" alt="Kuvaesimerkki Praatilla annotoidusta keskustelu&auml;&auml;nitteest&auml;, jossa esiintyy kaksi puhujaa, joiden tuottamat puhunnokset on annotoitu kumpikin omaan kerrokseensa.">
+<br clear="all">
+
+<p>Kun kyseinen litteraatti siirret&auml;&auml;n <A HREF="#ohje">oheisella Praat-skriptill&auml;</A> tekstitiedostoksi, saadaan t&auml;llainen lopputulos:
+
+<p>
+<center>
+<table border="0" cellpadding="20">
+<tr><td valign="top" width="400">
+<h4>Yksinkertainen litteraatti:</h4>
+<pre>
+conversation_example_1	(Tue Dec 29 17:05:15 2009)
+
+F1:	blah
+F2:	bli bla bla blaah
+F1:	bla blaaba blah bli
+F2:	blaaaaa
+F1:	blabla
+F2:	blee blaa blabla blaah
+F1:	bla
+F2:	blaba blaa
+F1:	blah blaaba blaaba blaaba blaa
+F2:	blabla
+F1:	bla bla-
+	blaah
+F2:	bli bla bla bla bli bla bla
+F1:	blabl-
+	bla bla bla bla bla blaaaaah
+</pre>
+</td><td valign="top" width="500">
+<h4>T&auml;ydellinen litteraatti, johon on lis&auml;tty puhunnosten alkamisajat, taukojen kestot ja p&auml;&auml;llekk&auml;ispuhunnan kestot:</h4>
+<pre>
+conversation_example_1	(Tue Dec 29 16:45:22 2009)
+
+[0.25 s]	F1:	blah
+				(-0.04 s)
+[1.12 s]	F2:	bli bla bla blaah
+				(-0.54 s)
+[4.77 s]	F1:	bla blaaba blah bli
+				(-0.29 s)
+[7.74 s]	F2:	blaaaaa
+				(-0.57 s)
+[8.44 s]	F1:	blabla
+				(0.10 s)
+[9.40 s]	F2:	blee blaa blabla blaah
+				(0.20 s)
+[11.75 s]	F1:	bla
+				(-0.10 s)
+[12.38 s]	F2:	blaba blaa
+				(0.16 s)
+[14.04 s]	F1:	blah blaaba blaaba blaaba blaa
+				(0.11 s)
+[17.37 s]	F2:	blabla
+				(-0.46 s)
+[17.50 s]	F1:	bla bla-
+				(0.08 s)
+[18.57 s]		blaah
+				(-0.46 s)
+[18.73 s]	F2:	bli bla bla bla bli bla bla
+				(0.47 s)
+[21.05 s]	F1:	blabl-
+				(0.31 s)
+[21.73 s]		bla bla bla bla bla blaaaaah
+</pre>
+</td></tr>
+</table>
+</center>
+
+
+<br>
+<A NAME="ohje"></A>
+<H2>Skriptin k&auml;ytt&ouml;ohje</h2>
+<ol>
+
+<li>Hae ja tallenna Praat-skripti <A HREF="http://www.helsinki.fi/~lennes/praat-scripts/public/save_conversation_tiers_as_text_file.praat">save_conversation_tiers_as_text_file.praat</A> koneellesi sopivaan paikkaan (klikkaa linkki&auml; hiiren oikealla napilla ja valitse pudotusvalikosta <b>Save link as...</b>). Valitse hakemisto, jonka l&ouml;yd&auml;t koneelta helposti.
+
+<p>
+<li>Avaa Praatiin se TextGrid-tiedosto, josta haluat tuottaa ihmisluettavan litteraatin.
+
+<ul>Jos eri puhujien puhe on litteroitu tai transkriboitu eri TextGrid-tiedostoihin (jotka ovat kuitenkin samankestoisia ja kuvaavat samaa &auml;&auml;nitallennetta), sinun on ensin yhdistett&auml;v&auml; samaan TextGrid-objektiin ne nimikointikerrokset (<i>tier</i>), jotka haluat mukaan litteraattiin. Praatin objekti-ikkunassa voit erist&auml;&auml; valitusta TextGrid-objektista tietyn nimikointikerroksen painamalla <b>Extract tier...</b> ja antamalla kerroksen numeron, jolloin nimikointikerrosta vastaava objekti ilmestyy objektilistalle. N&auml;in eristetyt IntervalTier-kerrokset voi tarvittaessa nimet&auml; uudelleen objekti-ikkunan alareunassa olevalla <b>Rename</b>-painikkeella (Varo painamasta vahingossa <b>Remove</b>-nappia, joka poistaa valitun objektin mit&auml;&auml;n kysym&auml;tt&auml;!). Sitten IntervalTierit pit&auml;&auml; j&auml;lleen yhdist&auml;&auml; uudeksi TextGrid-objektiksi valitsemalla kaikki tierit yht&auml; aikaa objektilistalta ja painamalla <b>Into TextGrid</b>. (Uusi TextGrid-objekti kannattaa varmuuden vuoksi tallentaakin omana tiedostonaan, jos sen kokoamisessa on kova ty&ouml;.)
+</ul>
+
+<p>
+<li>Nime&auml; tarvittaessa uudelleen ne TextGrid-objektin nimikointikerrokset, jotka haluat sis&auml;llytt&auml;&auml; litteraattiin. Kerrosten nimi&auml; k&auml;ytet&auml;&auml;n litteraatissa ko. puhujan tunnisteena. Kannattaa k&auml;ytt&auml;&auml; lyhyit&auml;, esim. 2-3 merkin pituisia koodeja. Oheisessa kuvitteellisessa esimerkiss&auml; kerrokset on nimetty puhujien koodeilla <i>F1</i> ja <i>F2</i>.
+<br>Nimikointikerrosten j&auml;rjestyksell&auml; ei ole v&auml;li&auml; - puhunnokset tallentuvat litteraattiin alkamisaikojensa mukaisessa j&auml;rjestyksess&auml;.
+
+<br><i>Huom. Skripti toimii toistaiseksi vain IntervalTier-tyyppisill&auml; annotaatiokerroksilla, joihin merkit&auml;&auml;n aikav&auml;lej&auml; ja niiden nimikkeit&auml; (ei siis PointTier-tyyppisill&auml; kerroksilla, joissa nimikkeit&auml; annetaan yksitt&auml;isille aikapisteille)!</i>
+
+<p>
+<li>Avaa &auml;sken tallentamasi skripti <i>save_conversation_tiers_as_text_file.praat</i> Praatin objekti-ikkunan komennolla <b>Praat:Open Praat script...</b> (tai <b>Read:Read from file...</b>).
+
+<p><li>Valitse skripti-ikkunassa <b>Run:Run</b>. N&auml;kyviin tulee seuraavanlainen lomake:
+<br clear="all">
+
+<img src="conversation_example_dialog.gif" width="350" alt="Praat-skriptin alkulomake" align="left" hspace="20" vspace="20">
+
+<ul>
+<p><li>Kirjoita nelj&auml;&auml;n ylimp&auml;&auml;n kentt&auml;&auml;n niiden TextGrid-objektin sis&auml;lt&auml;mien kerrosten nimet, jotka haluat sis&auml;llytt&auml;&auml; litteraattiin (ts. kirjoita puhujien koodit). Alkuper&auml;isen TextGridin kerrosten j&auml;rjestyksell&auml; ei ole v&auml;li&auml;.
+<br>T&auml;ll&auml; hetkell&auml; skripti tukee enint&auml;&auml;n nelj&auml;&auml; eri puhujaa. Jos puhujia on esimerkiksi vain kaksi, kirjoita koodit kahteen ylimp&auml;&auml;n kentt&auml;&auml;n ja j&auml;t&auml; vastaavasti kaksi alempaa kentt&auml;&auml; tyhjiksi.
+
+<p><li>Yksinkertaisimman mahdollisen litteraatin saat poistamalla ruksin seuraavista kolmesta valintaruudusta. T&auml;ll&ouml;in litteraattiin tulee vain puhujien koodit ja puhunnosten TextGridiin merkityt litteraatit.
+
+<p><li>Jos haluat, ett&auml; litteraatin jokaisen rivin alkuun lis&auml;t&auml;&auml;n hakasulkeissa kyseisen puhunnoksen alkamisaika alkuper&auml;isess&auml; TextGridiss&auml; (sekunteina kahden desimaalin tarkkuudella, ks. yll&auml;oleva esimerkki), ruksaa kohta <i>Insert start times</i>.
+
+<p><li>Jos haluat, ett&auml; kunkin puhunnosrivin v&auml;liin merkit&auml;&auml;n sulkeissa mahdollisen tauon kesto (sekunteina), ruksaa kohta <i>Insert pause durations</i>. 
+<br>Tauko tarkoittaa sit&auml; tallenteen osaa v&auml;litt&ouml;m&auml;sti ko. puhunnoksen j&auml;lkeen, jonka aikana kukaan ei puhu (ts. jonka aikana miss&auml;&auml;n nimikointikerroksista ei ole teksti&auml;).
+
+<p><li>Jos haluat, ett&auml; kunkin puhunnosrivin v&auml;liin merkit&auml;&auml;n sulkeissa seuraavan puhunnoksen alkua koskevan p&auml;&auml;llekk&auml;ispuhunnan kesto (sekunteina), ruksaa kohta <i>Include start times for overlaps</i>. 
+<br>P&auml;&auml;llekk&auml;ispuhunnan kesto tai alkamisaika merkit&auml;&auml;n negatiivisena lukuna. Jos samanaikaisesti puhuu useampi kuin kaksi puhujaa, p&auml;&auml;llekk&auml;ispuhunnan kesto lasketaan seuraavan puhunnoksen alkamisajan ja <i>edelt&auml;vist&auml; puhunnoksista ensimm&auml;isen&auml; alkaneen puhunnoksen p&auml;&auml;ttymisajan</i> erotuksena.
+
+<p><li>Viimeiseen kentt&auml;&auml;n (<i>Path (optional) and filename:</i>) kirjoitetaan (haluttaessa hakemistopolkuineen) sen tekstitiedoston nimi, jonne haluat tallentaa TextGridin perusteella luodun litteraatin. Antamasi tekstitiedoston ei tarvitse olla ennest&auml;&auml;n olemassa. Litteraatti tallentuu mahdollisen vanhan tiedoston p&auml;&auml;lle. Tekstitiedoston nimen p&auml;&auml;tteeksi on hyv&auml; antaa <i>.txt</i>, jotta eri k&auml;ytt&ouml;j&auml;rjestelm&auml;t tunnistaisivat tiedoston tyypin oikein.
+<ul>
+<li>Jos tiedostonimen edess&auml; ei ole hakemistopolkua (esim. jos kent&auml;ss&auml; lukee pelk&auml;st&auml;&auml;n <i>conversation.txt</i>), tallentuu litteraatti samaan hakemistoon, jossa suoritettava skriptitiedosto (<i>save_conversation_tiers_as_text_file.praat</i>) sijaitsee. T&auml;m&auml; on useimmiten helpoin ja varmin ratkaisu.
+<li>Jos kuitenkin haluat antaa tarkan hakemistopolun, tulee kyseisen hakemiston olla koneellasi olemassa ja sinulla on oltava hakemistoon kirjoitusoikeus. Jos hakemistopolku sis&auml;lt&auml;&auml; v&auml;lily&ouml;ntej&auml;, kirjoita se "lainausmerkkien sis&auml;&auml;n".
+</ul>
+
+</ul>
+
+<p>
+<li>Varmista viel&auml;, ett&auml; haluamasi TextGrid-objekti on objektilistalla valittuna. Paina sitten skriptilomakkeessa <b>OK</b>.
+<br>Jos TextGrid-tiedosto on pitk&auml; ja/tai puhujia on useita, litteraatin luonti voi kest&auml;&auml; hetken. Kun skriptin suoritus on p&auml;&auml;ttynyt, pit&auml;isi litteraatin ilmaantua antamaasi tiedostoon. 
+<br>Voit k&auml;ytt&auml;&auml; tekstitiedostoa sellaisenaan tai muotoilla sit&auml; esim. MS Wordilla. Litteraatissa k&auml;ytet&auml;&auml;n kenttien erottimena sarkainta (<i>tab</i>), joten se on periaatteessa mahdollista avata my&ouml;s taulukkolaskentaohjelmalla (esim. MS Excel).
+
+<p><b>Huom.</b> Skripti muuttaa suorituksen lopuksi alkuper&auml;isen TextGrid-objektin Praatin sis&auml;iseen "geneeriseen" muotoon, jossa erikoismerkit (&auml;&auml;kk&ouml;set, foneettiset merkit yms.) ilmaistaan usean merkin yhdistelmin&auml; ("backslash trigraphs"). T&auml;m&auml; muoto onkin yleens&auml; suositeltava etenkin jos k&auml;yt&auml;t samoja TextGrid-tiedostoja eri k&auml;ytt&ouml;j&auml;rjestelmill&auml; (Windows/Mac/Linux). Skripti ei kuitenkaan tallenna TextGridi&auml; minnek&auml;&auml;n - siit&auml; sinun pit&auml;&auml; halutessasi huolehtia itse.
+
+<br>
+<div align="Center"><b>VALMISTA TULI! :-)</b><br>
+
+<p>
+(Lis&auml;apua skriptien ajamisessa: ks. <a href="http://www.helsinki.fi/puhetieteet/atk/praat/">suomenkielinen Praat-opas</a>)<br>
+
+</ol>
+
+<p><i><b>Huom. T&auml;ss&auml; kuvattu Praat-skripti on vasta testik&auml;yt&ouml;ss&auml; ja saattaa siis sis&auml;lt&auml;&auml; virheit&auml;! Jos skripti ei mielest&auml;si toimi oikein tai huomaat t&auml;ss&auml; ohjeessa puutteita, otan mielell&auml;ni <A HREF="http://www.helsinki.fi/~lennes/">s&auml;hk&ouml;postitse</A> vastaan korjausehdotuksia. Valitettavasti en kuitenkaan voi tarjota henkil&ouml;kohtaista neuvontaa skriptin k&auml;yt&ouml;ss&auml;.</b></i>
+
+<br>
+<br>
+<a href="../index.html">Lis&auml;&auml; Praat-skriptej&auml;</a>
+<br>
+</div>
+</body></html>

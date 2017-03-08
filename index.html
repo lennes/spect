@@ -1,0 +1,1068 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+                                   
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+                                   
+  <meta name="author" content="Mietta Lennes"><title>SpeCT - The Speech Corpus Toolkit for Praat (former title: Mietta's scripts for the Praat program)</title>
+  
+                                         
+  <meta name="description" content="Some of Mietta&apos;s scripts for the Praat speech analysis program"></head><body text="#000000" bgcolor="#ffffff" link="#0000ff" alink="#000088" vlink="#ff0000">
+         <a name="top"></a>
+ <a href="http://www.helsinki.fi/%7Elennes/index_eng.html">Mietta's home page</a>
+         <br>
+                 
+<hr width="100%" size="2"><br>
+                 
+<div align="Center">       
+<h4>NEW! This site is now being transformed into</h4>
+<h1><em>SpeCT</em> - The Speech Corpus Toolkit for Praat</h1>
+<h3>(formerly known as <em>Mietta's Praat scripts</em>)</h3>
+       </div>
+             
+            
+<p>The aim of the <b>Speech Corpus Toolkit (SpeCT)</b> is to provide an organized inventory of well-documented Praat scripts that can be easily downloaded, modified and used in order to perform small tasks during the various stages of building, organizing, annotating, analysing, searching and exporting data from a <A HREF="https://secure.wikimedia.org/wikipedia/en/wiki/Speech_corpus">speech corpus</A>.</p>
+
+<p>The first full version of the SpeCT will appear during spring 2011 - apologies for any confusion and inconvenience this may cause. However, as a result of the reorganization, the scripts will hopefully be easier to find and to use. In addition to the scripts that are already available below, the new SpeCT site will contain several new scripts and instructions, e.g., for making simple searches in your annotated speech corpus. Stay tuned!</p>
+
+<hr width="100%" size="2"><br>
+
+<div align="Center"><b>Please note:</b><br>
+These scripts may not have been fully tested! You may use them at your own risk.<br>
+<em>I cannot provide support for using the scripts</em>, but I will gladly receive bug reports ;-)<br>
+       </div>
+       <br>
+<div align="Center">         <b>Latest update:</b> 20.1.2011<br>
+</div>
+ <br>
+         <br>
+ 
+<table cellpadding="2" cellspacing="2" border="0" width="90%" align="Center">
+   <tbody>
+     <tr>
+       <td valign="Top" width="25%">   
+       <b>Organize files and objects &nbsp;&nbsp;&nbsp; &rarr;</b>
+       <ul>
+		<li><a href="#files">Files and objects</a>
+       <br>
+       <li><a href="#pauses">Pause detection</a>
+       <br>
+       <li><a href="#cutting">Cutting up long sound files</a><br>
+    	<li><a href="howto/slicing.html">How to extract short sound files 
+from a long sound file</a>&nbsp;
+		</ul>
+       </td>
+       <td valign="Top" width="25%">   
+       <b>Annotate and
+       manage TextGrids &nbsp;&nbsp;&nbsp; &rarr;</b>
+       <ul>
+       <li><a href="#import">Import segmentation data</A>
+       <li><a href="#labeling">Labeling and TextGrid management</a>
+		</ul>
+       </td>
+       <td valign="Top" width="25%">   
+       <b>Analyze and visualize &nbsp;&nbsp;&nbsp; &rarr;</b>
+       <ul>
+       <li><a href="#views">Analysis views</a>
+       <li><a href="#pictures">Drawing pictures</a><br>
+       <li><a href="#calculate">Calculating data from labeled TextGrids and sounds</a>
+       <br>
+       </ul>
+       </td>
+       <td valign="Top" width="25%">   
+       <b>Export data</b>
+       <ul>
+       <li><a href="#export">Export segmentation data</A><br>
+      	<li><a href="howto/conversation_transcript.html">Export 
+a CA style conversation transcript from a TextGrid</a>&nbsp; 
+<br>
+		</ul>
+       </td>
+     </tr>
+   
+  </tbody> 
+</table>
+
+<div align="Center"> 
+<a href="#links"><b>Other Praat script resources on the web</b></a>
+</div>       <br>
+
+<ul>
+  <li>These Praat scripts were written by <a href="http://www.helsinki.fi/%7Elennes">
+         Mietta Lennes</a>
+         . They should provide some functionalities and tools for the <a href="http://www.praat.org/">
+         Praat </a>
+         program for phonetic analysis (see the Praat home page at <a href="http://www.praat.org/">
+         http://www.praat.org/</a>
+         ). Praat is being developed by Paul Boersma and David Weenink in 
+the   University   of Amsterdam.</li>
+  <li> These scripts are distributed under the <a href="http://www.gnu.org/licenses/gpl.txt">
+        GNU General Public License</a>
+        . The scripts are distributed without any warranty: I do not guarantee
+   that  the scripts work in your system, and I will not be held responsible
+   for any  harm or damage caused by their use.&nbsp;Please make sure that
+ you  know what you are doing.  </li>
+  <li> Please refer any interested parties to this web page (<a href="http://www.helsinki.fi/%7Elennes/praat-scripts/">
+        http://www.helsinki.fi/~lennes/praat-scripts/</a>
+        ).</li>
+  <li>If you can't find the script you need, take a look at some <a href="file:///home/lennes/public_html/praat-scripts/index.html#links">
+    other Praat script resources</a>
+     on the web. </li>
+</ul>
+<b>How to run and modify the scripts:</b> see Scripting tutorial    in the
+built-in Help pages within the <a href="http://www.praat.org/">Praat</a>
+         program (see the Help menu in the Objects list). <br>
+<b>Requirements: </b>In the Requirements column, you can find information 
+  on what type of objects have to be selected in the Object list or what sort
+  of files are needed in order to run each script. This is important especially
+  when you want to create new buttons  or menu commands to use the script.<br>
+<b>Compatibility note: </b>Some of the scripts were originally written  
+ in  a Windows machine, some in Macintosh, and some in Linux. All of them
+  should  work in any platform running Praat, but you may want to change,
+e.g.,  the default path for files according to your system. The version number
+tells   you the Praat version on which the script has been tested. Sometimes
+the  commands change in Praat, and consequently all of the scripts may not
+work  in all Praat versions.<br>
+<div align="Right"><a href="#top">Go up</a>
+<br>
+</div>
+<br>
+<hr width="100%" size="2"> 
+<h3><a name="files"></a>
+ Files and objects</h3>
+          
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Requirements</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Output</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Praat version</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/open_all_files_in_folder.praat"> open_all_files_in_folder.praat</a>
+       </h4>
+       <br>
+       </td>
+       <td valign="Top">No selections needed<br>
+       </td>
+       <td valign="Top">New objects for all the files in a given folder<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will open all the files in a user-specified 
+   directory, given that they can be recognized by Praat. Unknown file formats 
+   in the folder will result in an error. <br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/change_sample_rate_of_sound_files.praat">change_sample_rate_of_sound_files.praat</a>
+       </h4>
+       <br>
+       </td>
+       <td valign="Top">No selections needed<br>
+       </td>
+       <td valign="Top">Resampled copies of sound files<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will open all the sound files in a user-specified 
+   directory one by one, resample each file to a given sampling rate,
+       and save resampled files to another directory in AIFF or WAV
+       format.<br>
+       <I>Tip:</I> You can also use this script just to change the
+       file format of all the sounds in a directory.<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/remove_all_objects.praat"> remove_all_objects.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">No selections needed<br>
+       </td>
+       <td valign="Top">An empty object list<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">Beware! This script will remove all the objects 
+  in the Object list. NO UNDO. All unsaved changes will be lost. To be on 
+the safe side,  the  user will be prompted before removing the objects. <br>
+       The script is useful as a menu command within the Object list, if
+you   need  to handle large amounts of objects at once and you often need
+to clean them out.</td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h3><a name="views"></a>
+ Analysis views</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Requirements</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Output</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Praat version</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/draw_spectrum_from_selection.praat">draw_spectrum_from_selection.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">A Sound editor window has to be open, and a single 
+   point has to be selected. Open the script from the File menu of the editor 
+   window.<br>
+       </td>
+       <td valign="Top">A Spectrum editor window containing the spectrum
+  around the cursor<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script will draw a spectrum from a window  around 
+ the cursor. <br>
+       (Note: The original version of this script is not Mietta's idea -
+it  can   be found in the built-in Praat manual. Due to some changes in Praat 
+ commands,   the original script would not work in new Praat versions. This 
+ one works.)<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/draw_LPC_spectrum_from_selection.praat">draw_LPC_spectrum_from_selection.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">A Sound editor window has to be open, and a single 
+   point has to be selected. Open the script from the File menu of the editor 
+   window.<br>
+       </td>
+       <td valign="Top">A Spectrum editor window containing an LPC spectrum 
+   around the cursor<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script is a modification of the one above: 
+ it  will draw an LPC spectrum from a window around the cursor: first, a
+window    will be extracted from around the cursor, then an LPC object will
+be calculated,    and the center frame of the LPC analysis will be drawn
+as a Spectrum object.    The user will be prompted for the LPC analysis options.<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/draw_formant_chart.praat"> draw_formant_chart.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">A folder containing sound files and the corresponding 
+  TextGrid files<br>
+       </td>
+       <td valign="Top">An F1/F2 formant chart of all transcribed segments 
+  in a folder<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script reads sound files and the corresponding 
+  TextGrid files from a user-specified folder and draws F1-F2 values to the 
+  Picture window from the centre points of all segments that have a given 
+label.  All F1/F2 values are also written to a text file. Based on the Formant 
+object  (which is LPC based) supplemented with the Track command.       <br>
+     (Hint: The script can be easily modified to make some other measurements 
+  from the segments!)</td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/play_vowels_draw_formant_chart.praat"> play_vowels_draw_formant_chart.praat</a>
+       </h4>
+       <br>
+       </td>
+       <td valign="Top">A Sound object and the corresponding TextGrid  object 
+  have to be selected<br>
+       </td>
+       <td valign="Top">An F1/F2 formant chart in the Picture window,  with 
+  vowel points<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will draw F1-F2 values from the centre 
+   points of segments according to the selected TextGrid object. The user 
+will  be prompted  for the tier and for the interval labels that will be analysed.
+ Based on the Formant object (which is LPC based) supplemented with the Track
+ command.       <br>
+       The script will also play each segment and the environment a couple
+ of  times  - just for the fun of it!<br>
+       </td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h3></h3>
+ 
+<h3><a name="pauses"></a>
+ Pause detection</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Requirements<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Output<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Praat version<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/mark_pauses.praat"> mark_pauses.praat</a>
+       </h4>
+       <br>
+       </td>
+       <td valign="Top">One or more LongSound objects have to be selected<br>
+       </td>
+       <td valign="Top">A new TextGrid object for each LongSound object.
+   TextGrid will be saved to a user-defined location.<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script will run a series of intensity analyses 
+   on a LongSound object and mark boundaries at pauses into a new TextGrid 
+ object:  one boundary in the center of each pause, or two boundaries at the
+ edges.  The user is allowed to define the intensity criteria for a pause: 
+ &nbsp;the  upper intensity limit, and how long the pause has to be.&nbsp; 
+ It works, but don't expect miracles! The optimal pause criteria may vary 
+depending on the sound material.<br>
+<EM>(Some bug fixes 23.1.2006)</EM> </td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h3></h3>
+ 
+<h3><a name="cutting"></a>
+ Cutting up long sound files</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Requirements<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Output<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Praat version<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/save_intervals_to_aiff_sound_files.praat"> save_intervals_to_aiff_sound_files.praat</a></h4>
+      <h4><a href="public/save_intervals_to_wav_sound_files.praat"> save_intervals_to_wav_sound_files.praat</a></h4>
+      <br>
+
+       </td>
+       <td valign="Top">One LongSound object and the corresponding TextGrid 
+   object have to be selected<br>
+       </td>
+       <td valign="Top">Short, numbered AIFF or WAV sound files cut from the   LongSound 
+  plus a text file with the labels of the original intervals<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will save all the segments of a  LongSound 
+   according to a selected tier in the TextGrid to small AIFF or WAV sound  files. 
+ The  sound files will get a running index number, and you can also  add a
+special  prefix and/or suffix to all filenames. The labels of the intervals 
+ in the  original TextGrid object will be saved to a text file in the same 
+ directory.  Convenient for cutting up long sound files. <br>
+       </td>
+     </tr>
+     <tr>
+      <td valign="Top">
+      <h4><a href="public/save_labeled_intervals_to_aiff_sound_files.praat"> save_labeled_intervals_to_aiff_sound_files.praat</a></h4>
+      <h4><a href="public/save_labeled_intervals_to_wav_sound_files.praat"> save_labeled_intervals_to_wav_sound_files.praat</a></h4>
+      <br>
+      </td>
+      <td valign="Top">One LongSound object and the corresponding TextGrid 
+   object have to be selected<br>
+      </td>
+      <td valign="Top">Short AIFF or WAV sound files cut from the   LongSound, named after the interval labels <br>
+      </td>
+      <td valign="Top"><br>
+      </td>
+      <td valign="Top">This version of the above script will save all the segments of a  LongSound 
+   according to a selected tier in the TextGrid to small AIFF or WAV sound  files. 
+ The  sound files will be named after the corresponding TextGrid labels, and you can also  add a
+special  prefix and/or suffix to all filenames. Convenient for cutting up long sound files. <br>
+      <i>Note:</i> you have to check yourself that the interval labels do
+not contain illegal characters (or extra long strings) for &nbsp;the filenames!<br>
+      </td>
+    </tr>
+<tr>
+       <td valign="Top">       
+      <h4><a href="public/save_selection_to_sound_and_textgrid.praat"> save_selection_to_sound_and_textgrid.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One LongSound object and the corresponding TextGrid 
+   object have to be selected in the Object window<br>
+       </td>
+       <td valign="Top">A WAV sound file and a TextGrid file, that are  
+copies  of the selected location (without preserving times)<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will extract the selected part of  a
+ LongSound  and the corresponding TextGrid into separate files. You need
+ to  make sure  the correct objects are selected in the Object list and to 
+ make  a selection  in the TextGrid editor. The script is handy as a menu 
+command  in the editor window. Use it for extracting sound samples for presentation. 
+        </td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h3><a name="labeling"></a>
+ Labeling and TextGrid management</h3>
+ 
+<ul>
+   <li><a href="#import">Importing segmentation data</a>
+   </li>
+   <li><a href="#export">Exporting segmentation data</a>
+     <br>
+   </li>
+ 
+</ul>
+ <br>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Requirements<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Output<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Praat version<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/label_from_text_file.praat"> label_from_text_file.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One TextGrid object has to be selected, and  a  text 
+ file containing the interval labels must exist<br>
+       </td>
+       <td valign="Top">Adds text lines from a text file as labels in  a
+ tier  of a TextGrid object<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will take &nbsp;text lines from  a  text 
+ file and add them as labels to the intervals of a selected tier of a TextGrid 
+ object. The user will be prompted for the location of the text file.<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/label_quickly_from_text_file.praat"> label_quickly_from_text_file.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One TextGrid object has to be selected in the   object 
+ list, and a text file containing the interval labels must exist<br>
+       </td>
+       <td valign="Top">Overwrites interval labels in the first tier  of
+ a TextGrid with text lines taken from a text file<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">A quick and ruthless version of the previous  script: 
+  this one will not open a dialog box before overwriting all the labels! So,
+ beware. (Hint: use this as a button in the Object list.)<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/save_selection_to_sound_and_textgrid.praat"> save_selection_to_sound_and_textgrid.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One LongSound object and the corresponding TextGrid 
+   object have to be selected in the Object window<br>
+       </td>
+       <td valign="Top">A WAV sound file and a TextGrid file, that are  
+copies  of the selected location (without preserving times)<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script will extract the selected part of  a
+ LongSound  and the corresponding TextGrid into separate files. You need
+ to  make sure  the correct objects are selected in the Object list and to 
+ make  a selection  in the TextGrid editor. The script is handy as a menu 
+command  in the editor window. Use it for extracting sound samples for presentation. 
+        </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/total_duration_of_labeled_segments.praat"> total_duration_of_labeled_segments.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One TextGrid object has to be selected<br>
+       </td>
+       <td valign="Top">The total duration of transcribed intervals will
+be  printed in the Info window<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script will go through all the intervals in
+a  selected tier and calculate the total duration of intervals that have
+a non-empty  label. You can also give an additional criterion for the contents
+of another  tier.<br>
+  The script is handy for measuring your progress when you are labeling a 
+LongSound! Better add a button for it in the dynamic menu.<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top"><b><a href="public/align_boundaries_in_two_interval_tiers.praat">align_boundaries_in_two_interval_tiers.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">One TextGrid object needs to be selected<br>
+       </td>
+       <td valign="Top">Boundaries in one interval tier (1) that are sufficiently close to
+       boundaries in another interval tier (2) will be aligned with boundaries
+       in tier 2.<br>
+       </td>
+       <td valign="Top">4.3.21<br>
+       </td>
+       <td valign="Top">This script will align boundaries in two tiers, in case
+       they are only slightly misplaced. The selected TextGrid will be changed
+       and the boundaries that are moved around are displayed to the user while the script
+       is working. Tier 2 stays fixed.<br>
+       <br>
+       The script is handy when you need to check, e.g., that word and syllable
+       boundaries are aligned. If you need to align boundaries in several
+       tiers, you should first align a tier (1) with boundaries in the tier (2) you
+       trust most.
+<br>
+       </td>
+     </tr><tr>
+     <tr>
+       <td valign="Top"><b><a 
+href="public/tokenize_tiers_in_TextGrid.praat">tokenize_tiers_in_TextGrid.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">A directory with TextGrid files ending in .TextGrid<br>
+       </td>
+       <td valign="Top">The TextGrid files will be replaced with files where the tiers 
+have been tokenized into new word tiers. 
+       </td>
+       <td valign="Top"><b>The script has not been fully tested yet!</b><br>
+       </td>
+       <td valign="Top">
+A copy 
+is created for each original tier and all the intervals that contain text have 
+been tokenized (divided into words) into the new tiers. The new tiers will be 
+called <em>originaltier</em>-word. The word boundaries will be placed roughly 
+according to the number of (alphabetical) characters in each word with respect to the 
+length of the string contained in the original interval.<br>
+<em>Tip:</em> Save the script file into the same directory with the TextGrid files and 
+leave the directory box empty when running the script. This will ensure a smooth run 
+:-) 
+       </td>
+     </tr><tr>
+     <tr>
+       <td valign="Top"><b><a href="public/replace_part_of_textgrid.praat"> replace_part_of_textgrid.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">Two TextGrid objects have to be selected<br>
+       </td>
+       <td valign="Top">A new TextGrid object, where IntervalTier(s) from 
+the longer TextGrid are partly replaced with tiers in the shorter TextGrid<br>
+       </td>
+       <td valign="Top">4.0.23<br>
+       </td>
+       <td valign="Top">This script will copy all data from one or more tiers
+ of a short TextGrid object to a selected time point in a longer TextGrid.
+ Old data in the long TextGrid are thus partly overwritten - however, the
+original TextGrids will be saved.<br>
+       <br>
+  The script was written for a situation where people want to extract shorter
+ sections of a LongSound object for labeling, but still they want to be able
+ to later append the labeled sections back into the big TextGrid file. All
+ you have to do is make a big TextGrid for the LongSound and mark boundaries
+ at the starting points of each extracted region. It is also a good idea
+to  label the extracted intervals with the filenames. This way, you can later
+ find the correct places for replacements. <br>
+       <i>Note: There are still errors in this script at the moment, but
+the partial replacement of one single tier seems to work nicely!</i> :)<br>
+       </td>
+     </tr><tr>
+      <td valign="Top"><a href="public/save_Finnish_tier_to_phoneme_string.praat">save_Finnish_tier_to_phoneme_string.praat</a>
+      <br>
+      </td>
+      <td valign="Top">A TextGrid object with an interval tier that has text in Finnish orthography<br>
+      </td>
+      <td valign="Top">A text file with the Finnish tier text roughly converted into phonemes<br>
+      </td>
+      <td valign="Top"><br>
+      </td>
+      <td valign="Top">This script converts the Finnish text in a Praat IntervalTier
+into a phoneme string. The script has been used to prepare input files for
+some automatic segmentation tools, which generally need a phoneme string
+as input. In the case of Finnish, the grapheme-to-phoneme conversion rules
+are very few and simple, so the task is not difficult and you only need a
+transliteration of the speech signal to get a pretty good approximation of
+the phonemes.<br>
+ <br>
+For technical reasons, the phonemes will be converted to corresponding uppercase characters.<br>
+      </td>
+    </tr>
+
+   
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h4><a name="import"></a>
+ Importing segmentation data</h4>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Requirements</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Output</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Praat version</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/make_textgrid_from_segment_data.praat"> make_textgrid_from_segment_data.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">No selections required. There should be a folder
+ with sound files and corresponding text files with segmentation data.<br>
+       </td>
+       <td valign="Top">New TextGrid objects will be created and saved for
+  all sounds that have segmentation data available<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script will read segmentation and labeling data 
+ from simple text files in a user-specified directory and convert the information 
+ to Praat TextGrid objects, which will then be saved in the same directory. 
+       <br>
+    The segmentation data should consist of text lines in the form <i>starting
+  point of segment - space - segment label - line break</i>, and the segments
+  should be ordered according to time. The corresponding sound files will
+also  be read, in order to get the correct duration for the TextGrid objects.
+The  text file names should be identical with the corresponding sound file
+names,  except for the file extension.<br>
+    Good for importing simple label data to Praat from other
+       environments.
+    <I>A bug in this script was fixed on 30.6.2003. Please email me in case
+     the script does not work correctly!</I></td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/make_textgrid_from_segment_data_endpoints.praat"> make_textgrid_from_segment_data_endpoints.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">No selections required. There should be a folder
+ with sound files and corresponding text files with segmentation data.<br>
+       </td>
+       <td valign="Top">New TextGrid objects will be created and saved for
+  all sounds that have segmentation data available<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script is a modification of the one
+       above (but this one requires end point times of segments instead
+       of starting points). It will read segmentation and labeling data 
+ from simple text files in a user-specified directory and convert the information 
+ to Praat TextGrid objects, which will then be saved in the same directory. 
+       <br>
+    The segmentation data should consist of text lines in the form <i>end
+  point of segment - space - segment label - line break</i>, and the segments
+  should be ordered according to time. The corresponding sound files will
+also  be read, in order to get the correct duration for the TextGrid objects.
+The  text file names should be identical with the corresponding sound file
+names,  except for the file extension.<br>
+    Good for importing simple label data to Praat from other environments.</td>
+     </tr>
+    
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h4><a name="export"></a>
+ Exporting segmentation data</h4>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Requirements</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Output</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Praat version</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/save_interval_data_to_text_file.praat"> save_interval_data_to_text_file.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One TextGrid object has to be selected<br>
+       </td>
+       <td valign="Top">A new text file will be saved with the segment data 
+ of one IntervalTier<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script is the inverse of the preceding script: 
+ it writes a user-specified tier of a selected TextGrid object to a simple 
+ text file. The lines in the text file will have the format <i>starting point 
+ of segment - space - segment label - line break</i>. <br>
+   Good for exporting simple label data from Praat to other environments.<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/save_conversation_tiers_as_text_file.praat"> 
+save_conversation_tiers_as_text_file.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">One TextGrid object has to be selected<br>
+       </td>
+       <td valign="Top">A new text file will be saved containing the 
+labels from intervals in up to four IntervalTiers in the order of 
+their starting points<br>
+       </td>
+       <td valign="Top">5.1<br>
+       </td>
+       <td valign="Top">
+	This script exports the labeled utterances in a conversation to a 
+plain text file, one utterance per line. Each speaker must be represented 
+by one interval tier in the selected TextGrid object. Tier names are used 
+as individual codes for the speakers. Utterance transcriptions are written 
+in the order of their starting times, which the user may choose to insert 
+in front of each utterance line. Pause durations and overlap times 
+may also be included in the transcript. 
+<br>Good for exporting a CA style 
+conversation transcript from Praat.
+	<br>
+       </td>
+     </tr>
+   
+  </tbody> 
+</table>
+                 
+<h4></h4>
+          
+<h3>   </h3>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h3><a name="calculate"></a>
+ Calculating data from labeled TextGrids and sounds</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Requirements<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Output<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Praat version<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="public/calculate_segment_durations.praat"> calculate_segment_durations.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">A TextGrid object has to be selected<br>
+       </td>
+       <td valign="Top">A text file with duration data<br>
+       </td>
+       <td valign="Top">4.0.5<br>
+       </td>
+       <td valign="Top">This script will go through all the intervals in
+ a selected tier of a selected TextGrid object, and save the durations of 
+labeled intervals to a text file. Each new text line will contain the label 
+of the interval, a tab separator, and the duration of the segment in question.</td>
+     </tr>
+     <tr>
+       <td valign="Top"><b><a href="public/collect_pitch_data_from_files.praat">collect_pitch_data_from_files.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">No selections required<br>
+       </td>
+       <td valign="Top">A text file with pitch data<br>
+       </td>
+       <td valign="Top">4.0.23-<br>
+       </td>
+       <td valign="Top">A script that will go through all the TextGrid 
+files and the Sound files in a given folder, find sound-grid pairs that have 
+the same name, open each pair, run through the TextGrid, collect data from 
+labeled intervals and append the information to a simple tabulated text file 
+(which you can later open in a statistical or spreadsheet program).<br>
+ This version calculates the maximum pitch of each labeled interval. Take a look at the script; you should be able to modify the script to suit your own needs!<br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top"><b><a href="public/collect_formant_data_from_files.praat">collect_formant_data_from_files.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">No selections required<br>
+       </td>
+       <td valign="Top">A text file with formant data<br>
+       </td>
+       <td valign="Top">4.0.23-<br>
+       </td>
+       <td valign="Top">A script that will go through all the TextGrid 
+files and the Sound files in a given folder, find sound-grid pairs that have 
+the same name, open each pair, run through the TextGrid, collect data from 
+labeled intervals and append the information to a simple tabulated text file 
+(which you can later open in a statistical or spreadsheet program).<br>
+ This version calculates formant values at the mid point of each
+       labeled interval. Take a look at the script; you should be able
+       to modify the script to suit your own needs! <br>
+       <B>NB:</B> Automatic formant measurements do not always produce
+       sensible results, since the
+       optimal analysis parameters and the interpretation of formants
+       will vary for different
+       signals. I do not want to patronize, but... please do not try to use
+       the same parameters for both male, female, and child speakers!
+       You should always make sure you understand how the analysis works before
+       drawing conclusions on the basis of your results. <br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top"><b><a href="public/collect_data_from_two_tiers_in_files.praat">collect_data_from_two_tiers_in_files.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">No selections required<br>
+       </td>
+       <td valign="Top">A text file with duration and pitch data<br>
+       </td>
+       <td valign="Top">4.2.21<br>
+       </td>
+       <td valign="Top">A script that will go through all the TextGrid 
+files and the Sound files in a given folder, find sound-grid pairs that have 
+the same name, open each pair, find two tiers that have the given names (phone
+tier and syllable tier), run through the TextGrid, collect duration and
+pitch maximum from labeled phone intervals along with durations of the
+corresponding syllable tier intervals, and append this information to a
+tabulated plain text file (which you can later open in a statistical or
+spreadsheet program). Each data row will also contain both the label of the
+phone and the label of the preceding phone interval.<br>
+ Take a look at it. You can easily add more tiers and analysis objects that the
+ script should check! <br>
+       </td>
+     </tr>
+      </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ 
+<h3><a name="pictures"></a>
+ Drawing pictures</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Requirements</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Output</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Praat version</b></i><br>
+       </td>
+       <td valign="Top"><i><b>Description</b></i></td>
+     </tr>
+     <tr>
+       <td valign="Top"><a href="public/draw_distribution_bar_from_data_file.praat"><b>
+ draw_distribution_bar_from_data_file.praat</b></a>
+       <br>
+       </td>
+       <td valign="Top">A text file, with each line containing a number,
+a space, and any text<br>
+       </td>
+       <td valign="Top">A horizontal bar in the Picture window, showing the 
+distribution of the lines in the text file<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script takes advantage of the TextGrid drawing 
+functionalities. It creates a fake TextGrid object from the data you give 
+in a text file, draws it as a horizontal bar with "boundaries" to the Picture 
+window, and adds a title and some other information. The whole bar represents 
+"100%", so you can see how your data is distributed... funny, but rather useful!
+      <br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top"><a href="public/draw_formant_point_to_Bark_chart.praat"><b>
+ draw_formant_point_to_Bark_chart.praat</b></a>
+       <br>
+       </td>
+       <td valign="Top">F1 and F2 values for a vowel point<br>
+       </td>
+       <td valign="Top">A Bark-scale formant chart picture with a one-Bark
+       formant circle<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script draws a one-Bark vowel circle from given
+       formant values (Hz) on a Bark-scale F1/F2 chart.
+      <br>
+       </td>
+     </tr>
+   
+     <tr>
+       <td valign="Top"><a href="public/draw_formant_point_to_ERB_chart.praat"><b>
+ draw_formant_point_to_ERB_chart.praat</b></a>
+       <br>
+       </td>
+       <td valign="Top">F1 and F2 values for a vowel point<br>
+       </td>
+       <td valign="Top">An ERB-scale formant chart picture with a one-Erb
+       formant circle<br>
+       </td>
+       <td valign="Top"><br>
+       </td>
+       <td valign="Top">This script draws a one-Erb vowel circle from given
+       formant values (Hz) on a Erb-scale F1/F2 chart.
+      <br>
+       </td>
+     </tr>
+   
+     <tr>
+       <td valign="Top"><a href="public/draw_f0_curves_from_files.praat"><b>
+ draw_f0_curves_from_files.praat</b></a>
+       <br>
+       </td>
+       <td valign="Top">A directory with sound and/or Pitch files, each representing one unit, e.g., a sentence, to be plotted<br>
+       </td>
+       <td valign="Top">A picture with pitch curves drawn on top of each other, the Pitch files, plus a text file with basic pitch statistics<br>
+       </td>
+       <td valign="Top">4.4.30<br>
+       </td>
+       <td valign="Top">This script draws pitch curves for sound or Pitch files into the same picture. The pitch scale can be selected (Hz, logHz, semitone, mel, ERB). Moreover, basic statistics (min, max, mean, median, stdev) of each pitch object are saved into a tabulated text file in the selected scale. Curves can be drawn as plain lines or speckled, and either in only black lines or in different colours and line types. You may let Praat "normalize time" in order to compare the general contour shapes, or you may choose to plot the curves in absolute time scale.
+       <br>For advanced users: The curves can be drawn in different colours according to, e.g., speaker ID or other group code that is contained by the file name. (See instructions within the script file.)<br>
+       <EM>This script is not very well tested yet. Please report any bugs!</EM>
+      <br>
+       </td>
+     </tr>
+   
+  </tbody> 
+</table>
+ 
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ <br>
+       
+<h2><a name="links"></a>
+    Other Praat script resources on the web</h2>
+       
+<ul>
+      <li><a href="http://www.biols.susx.ac.uk/home/Chris_Darwin/">Chris
+Darwin's   scripts</a>
+      </li>
+      <li><a href="http://www.ling.lu.se/persons/JohanF/PRAATSCRIPTS/">Johan
+  Frid's scripts</a>
+      </li>
+      <li><a href="http://fips.igl.uni-freiburg.de/%7Epeter/praat2html.htm">
+   Peter Gilles: praat2html (in German)</a>
+      </li>
+      <li><a href="http://www.ling.gu.se/~jonas/sounds/">Jonas 
+Lindh's   scripts</a>
+      </li>
+        <br>
+      </li>
+	<li><a href="http://www.cphling.dk/pers/nrp/akustik/akustik.html">N.Reinholt Pedersen's scripts</A>
+<p>
+<li><a href="http://www.fon.hum.uva.nl/paul/diss/">Scripts in Paul
+Boersma's   dissertation work 'Functional Phonology'<br>
+        </a>
+      </li>
+<p>
+      <li>Do you have another Praat script site? Let me know! <A HREF="http://www.helsinki.fi/~lennes/index_eng.html">Email me...</A>
+        <br>
+      </li>
+       
+</ul>
+     
+<div align="Right"><a href="#top">Go up</a>
+ <br>
+ </div>
+ <br>
+ <br>
+                 
+</body></html>

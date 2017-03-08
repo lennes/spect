@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta name="author" content="Mietta Lennes">
+<title>How to export a plain-text conversation transcript for a sound file annotated with Praat</title></head><body>
+<h2>How to export a plain-text conversation transcript for a sound file annotated with <a href="http://www.praat.org/">the Praat program</a>
+</h2>
+
+<br>
+<table border="0" align="center" cellspace="20" cellpadding="0" width="100%">
+<tr>
+<td valign="top">
+<h4><a href="keskustelun_litterointi.html">Suomeksi, kiitos</a>
+<br>
+</h4>
+<h4>Mietta Lennes<br>30.12.2009</h4>
+
+
+<ul><p><b>
+<li><A HREF="#esittely">Introduction</A>
+<li><A HREF="#esimerkki">Example</a>
+<li><A HREF="#ohje">Instructions</a>
+</b>
+<p><A HREF="../index.html">More Praat scripts</a>
+</ul>
+</td>
+
+<td valign="top" width="405"><A HREF="#esimerkki">
+<img src="conversation_example_TextGrid.gif" width="400" alt="An example picture of a conversation annotated with Praat." border="0"></a>
+
+</td>
+<td valign="top"><br><br><H1>&rarr;</H1></td>
+<td valign="top"><pre style="font-size:10px">
+conversation_example_1	(Tue Dec 29 17:05:15 2009)
+
+F1:	blah
+F2:	bli bla bla blaah
+F1:	bla blaaba blah bli
+F2:	blaaaaa
+F1:	blabla
+F2:	blee blaa blabla blaah
+F1:	bla
+F2:	blaba blaa
+F1:	blah blaaba blaaba blaaba blaa
+F2:	blabla
+F1:	bla bla-
+	blaah
+F2:	bli bla bla bla bli bla bla
+F1:	blabl-
+	bla bla bla bla bla blaaaaah
+</pre>
+</td>
+</tr>
+</table>
+
+<p><b><A 
+HREF="https://www.youtube.com/watch?v=VpEzhZ1e4Hc&feature=youtu.be">Watch 
+the video 
+tutorial!</a></b></p>
+
+<br>
+
+<A NAME="esittely"></A>
+<p><b>
+Please note: The Praat script described here is still being tested and may contain bugs! In case you believe the script is not working correctly or if you notice errors in the instructions below, I would be happy to receive suggestions for improvements <A HREF="http://www.helsinki.fi/~lennes/">by email</A>. 
+<br><i>However, I cannot provide further support for using or modifying the script.</b></i>
+
+<br><p><br>
+<h3>Introduction</h3>
+
+<p>Once you have annotated an audio recording of conversational speech with the <a href="http://www.praat.org/">Praat program</a>, you can use <A HREF="#ohje">this Praat script</A> 
+for exporting a transcript of the conversation from the TextGrid object into a plain text file. It is then easy to modify and use the transcript as a human-readable description of your material in presentations and publications.<br>
+The same Praat script can also be used for exporting any other annotations from Praat. However, the instructions below are based on a fictitious example of conversational speech.
+
+<p>
+<b>Prerequisites:</b> Exactly one TextGrid object must be selected in the Object list of the <a href="http://www.praat.org/">Praat program</a>. Each speaker's utterances must be represented by the labeled intervals in one interval tier in the selected TextGrid object. Thus, the TextGrid object must contain at least as many IntervalTiers as there are participants in the conversation.
+<br>
+
+<p><b>Result:</b> a <b>plain text file</b> containing a skeletal CA style transcript with one utterance per line. Lines are saved in the order of their starting times within the TextGrid object. When speakers change, the code for the next speaker will appear at the beginning of the line. Utterances that are completely overlapped by a preceding utterance will appear in square brackets. The user may choose to insert the durations of pauses (in seconds) between lines, where applicable (pauses referring to those portions of the audio during which nobody is speaking). In addition, it is possible to insert the starting times of overlapping speech in relation to the end time of a preceding utterance (in seconds). Overlaps will appear in brackets like pause durations, but they will be represented as negative numbers. For instance, the overlap time (-0.20 s) would mean that the next utterance overlaps a previous speaker and it has started 0.2 seconds before the preceding utterance ended.
+
+<p><b>Why should you use Praat for transcribing conversational speech?</b>
+<ul>
+<li>With a little practise, it is easy and convenient to transcribe conversational speech with Praat, since it is possible to repeatedly listen to small portions of the audio file.
+<li>When studying spoken language, it is important to be able to refer to the original recordings as required. By using the Praat script described below, the researcher may readily use both the audio material and the human-readable transcript in parallel.
+<li>As the basic transcript has been created using Praat and as the start times of the original utterances can be inserted in the exported transcript, it is easy to find the desired portion in the audio file later.
+<li>It is easy to quickly go back and listen to any desired portion of the original recording that has been annotated with Praat.
+<li>Once a transcript has been created with Praat, it may encourage the researcher to apply different acoustic methods for measuring and illustrating conversational speech. For instance, it is possible to supplement a CA transcript with a detailed acoustic-phonetic analysis of a particular event within a conversation.
+<ul><b>NB: In order to be able to correctly interpret the acoustic measurements, the audio signal must be of sufficiently good quality with reasonably little background noise and no overlapping speech. One must also know the acoustic method and the phonetic factors that may affect the result.</b> 
+For instance, the Pitch analysis, related to speech melody and intonation, may be misinterpreted unless one knows the limitations of the analysis and defines the analysis parameters in an optimal way.</ul>
+<li>In addition to utterance tiers, it is possible to enrich the annotation of the speech material with any number of other annotation tiers. One may wish to describe, e.g., paralinguistic features, voice quality, or miscellaneous comments as separate annotation tiers. In case a more detailed acoustic-phonetic analysis is required, one may insert tiers for words and individual speech sounds that may be annotated at the desired locations. Such detailed segmentation may be utilized for defining and saving the exact points for acoustic measurements, or for drawing pictures.
+<li>All changes and corrections should be made in the original TextGrid file with Praat. With the script, one can produce new transcript versions as required.
+</ul>
+
+<A NAME="esimerkki"></A>
+<h3>Example</h3>
+
+<p>Imagine that the following conversation with two speakers (<i>F1</i> and <i>F2</i>) has been annotated with Praat:
+
+<p>
+<img src="conversation_example_TextGrid.gif" width="900" alt="An example picture of a conversation annotated with Praat.">
+<br clear="all">
+
+<p>When the annotations above are exported into a plain text file <A HREF="#ohje">with the Praat script</A>, this is what the result would look like:
+
+<p>
+<center>
+<table border="0" cellpadding="20">
+<tr><td valign="top" width="400">
+<h4>Plain transcript:</h4>
+<pre>
+conversation_example_1	(Tue Dec 29 17:05:15 2009)
+
+F1:	blah
+F2:	bli bla bla blaah
+F1:	bla blaaba blah bli
+F2:	blaaaaa
+F1:	blabla
+F2:	blee blaa blabla blaah
+F1:	bla
+F2:	blaba blaa
+F1:	blah blaaba blaaba blaaba blaa
+F2:	blabla
+F1:	bla bla-
+	blaah
+F2:	bli bla bla bla bli bla bla
+F1:	blabl-
+	bla bla bla bla bla blaaaaah
+</pre>
+</td><td valign="top" width="500">
+<h4>Full transcript with the start times of the utterances, pause durations and overlap durations:</h4>
+<pre>
+conversation_example_1	(Tue Dec 29 16:45:22 2009)
+
+[0.25 s]	F1:	blah
+				(-0.04 s)
+[1.12 s]	F2:	bli bla bla blaah
+				(-0.54 s)
+[4.77 s]	F1:	bla blaaba blah bli
+				(-0.29 s)
+[7.74 s]	F2:	blaaaaa
+				(-0.57 s)
+[8.44 s]	F1:	blabla
+				(0.10 s)
+[9.40 s]	F2:	blee blaa blabla blaah
+				(0.20 s)
+[11.75 s]	F1:	bla
+				(-0.10 s)
+[12.38 s]	F2:	blaba blaa
+				(0.16 s)
+[14.04 s]	F1:	blah blaaba blaaba blaaba blaa
+				(0.11 s)
+[17.37 s]	F2:	blabla
+				(-0.46 s)
+[17.50 s]	F1:	bla bla-
+				(0.08 s)
+[18.57 s]		blaah
+				(-0.46 s)
+[18.73 s]	F2:	bli bla bla bla bli bla bla
+				(0.47 s)
+[21.05 s]	F1:	blabl-
+				(0.31 s)
+[21.73 s]		bla bla bla bla bla blaaaaah
+</pre>
+</td></tr>
+</table>
+</center>
+
+<br>
+<A NAME="ohje"></A>
+<H2>Instructions for using the script</h2>
+<ol>
+
+<li>Download and save the Praat script <A HREF="http://www.helsinki.fi/~lennes/praat-scripts/public/save_conversation_tiers_as_text_file.praat">save_conversation_tiers_as_text_file.praat</A> to a convenient location on your computer (right-click on the link and select <b>Save link as...</b>).
+
+<p>
+<li>Open the TextGrid file in Praat.
+
+<ul>In case the transcripts of the different speakers are located in several different TextGrid files (the files must have an identical total duration and of course describe the very same audio recording), you must first combine those tiers that you wish to include in the transcript. In the Object window, it is possible to extract a particular tier from a TextGrid by pressing <b>Extract tier...</b> and providing the index number of the tier. If required, these IntervalTier objects can be renamed with the  <b>Rename</b> button at the bottom of the Object window. (Beware of accidentally pressing the <b>Remove</b> button which removes the selected object(s) with no questions asked!). Next, you need to combine the IntervalTiers by selecting them together and by pressing <b>Into TextGrid</b>. (If this was a lot of work, you might want to save the new TextGrid object.)
+</ul>
+
+<p>
+<li>If required, rename those annotation tiers in the TextGrid that you wish to include in the transcript. Tier names will be used to identify the different speakers. Short codes with 2-3 characters are recommended. In the example, the tiers have been named with the codes <i>F1</i> and <i>F2</i>.
+<br>The order of the tiers is not important - the utterances will be saved in the order of their starting times.
+
+<br><i>NB. The script currently works with IntervalTiers only, i.e., not with PointTiers!</i>
+
+<p>
+<li>Open the Praat script <i>save_conversation_tiers_as_text_file.praat</i> with the command <b>Praat:Open Praat script...</b> in the Object window (or use <b>Read:Read from file...</b>).
+
+<p><li>In the script window, select <b>Run:Run</b>. The following dialog box should appear:
+<br clear="all">
+
+<img src="conversation_example_dialog.gif" width="350" alt="Praat-skriptin alkulomake" align="left" hspace="20" vspace="20">
+
+<ul>
+<p><li>In the four topmost fields, type the names of the tiers that you wish to export (i.e., the speaker codes). The order in which you input the tiers is not important, since each speaker's utterances will be exported in the temporal order in which they occur.
+<br>The script currently supports up to four speakers. In case there are only two speakers, for example, you should fill in the two topmost fields and leave the next two fields empty.
+
+<p><li>In case you need a simple text file with nothing but the speaker codes and utterance transcripts, uncheck the following three checkboxes.
+
+<p><li>If you wish the start times of each utterance to appear in front of each line (as in the above example), check <i>Insert start times</i>.
+
+<p><li>If you wish the pause durations to appear between utterances (where applicable), check <i>Insert pause durations</i>. 
+<br>A pause refers to a portion of speech after an utterance during which nobody is speaking (i.e., during which there are no labels in any of the annotation tiers).
+
+<p><li>If you wish the overlap times to appear between utterances, check <i>Include start times for overlaps</i>. 
+<br>The duration or start time of overlappins speech is marked as a negative figure. In case more than two speakers are simultaneously overlapping each other, the start time of overlap will be calculated as the difference between the starting point of the next utterance and <i>the preceding overlapped utterance that started first.</i>
+
+<p><li>The last field (<i>Path (optional) and filename:</i>) should contain the filename for the transcript to be exported. The file does not need to exist, and an existing file will be overwritten. It is good practice to use the file extension <i>.txt</i>, since the operating system of your computer will then be able to suggest suitable programs for opening the text file.
+<ul>
+<li>If there is no path but just the file name (e.g., <i>conversation.txt</i>), the transcript will be saved to the same directory where you saved the script file (<i>save_conversation_tiers_as_text_file.praat</i>). This is usually the most convenient solution.
+<li>In case you want to provide the exact path for the transcript file, the directories in the path must exist and you must have sufficient user privileges in order for the script to succeed. If the path contains spaces, you should put it in "double quotes".
+</ul>
+
+</ul>
+
+<p>
+<li>Make sure that the TextGrid object is selected in the Object window, then press <b>OK</b>.
+<br>In case the TextGrid file is very long and/or if there are several speakers, it may take a while to create the transcript. When the script has finished running, the transcript should appear in the text file you asked for.
+<br>You can now use the text file as is, or you may reformat it for presentation with, e.g., MS Word. The fields in the transcript are separated by tab characters, making it even possible to open or import the file in spreadsheet programs (such as MS Excel).
+
+<p><b>NB:</b> The script will convert the TextGrid object into the "generic" format used by Praat where special characters (e.g., phonetic symbols) are expressed as combinations of several characters ("backslash trigraphs"). This format is recommended especially when you need to open and edit the same TextGrid files in several computers and platforms (Windows/Mac/Linux). However, the script does not save the converted TextGrid object, so you need to take care of this yourself.
+
+<br>
+<p>
+<div align="Center"><b>AND YOU'RE DONE! :-)</b><br>
+
+</ol>
+
+<p><i><b>
+Please note: The Praat script described here is still being tested and may contain bugs! In case you believe the script is not working correctly or if you notice errors in the instructions below, I would be happy to receive suggestions for improvements <A HREF="http://www.helsinki.fi/~lennes/">by email</A>. However, I cannot provide further support for using or modifying the script.</b></i>
+
+
+
+<br><br>
+<a href="../index.html">More Praat scripts</a><br>
+</div>
+</body></html>

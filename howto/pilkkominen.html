@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"><meta name="author" content="Mietta Lennes"><title>Pitk&auml;n &auml;&auml;nitiedoston pilkkominen Praat-ohjelmalla</title></head><body>
+<h1>Pitk&auml;n &auml;&auml;nitiedoston pilkkominen lyhyisiin &auml;&auml;nitiedostoihin</h1>
+<h2><a href="http://www.praat.org/">Praat-ohjelmalla</a>
+</h2>
+<h4><a href="slicing.html">In English, please</a>
+<br>
+</h4>
+<h4>Mietta Lennes<br>23.9.2002</h4>
+<br>
+N&auml;ill&auml; pikaohjeilla saat pitk&auml;st&auml; &auml;&auml;nitiedostosta
+mahdollisimman helposti eristetyksi suurenkin joukon haluttuja lyhyit&auml;
+&auml;&auml;nitiedostoja. <br>
+<b>Lopputuloksena </b>on joko <b>numeroituja &auml;&auml;nitiedostoja</b> tai <b>&auml;&auml;nitiedostoja, joilla on tietyt nimet</b>
+. (Viimeksimainittu tapaus on helppo hoitaa, jos sinulla on esim. lista sanoista
+tai lauseista, jotka puhuja on lukenut &auml;&auml;neen.)<br>
+<b>Ennakkovaatimuksena</b> on, ett&auml; sinulla on leikelt&auml;v&auml;
+&auml;&auml;nitiedosto avattuna <a href="http://www.praat.org/">Praat-ohjelman </a>
+objektilistaan LongSound-tyyppisen&auml;.<br>
+<ol>
+  <li>Merkitse pitk&auml;st&auml; &auml;&auml;nitiedostosta eristett&auml;vien
+&auml;&auml;nip&auml;tkien rajat TextGrid-objektiin. <br>
+(Ohje: Valitse LongSound-objekti Praatin objektilistasta. Luo t&auml;lle
+&auml;&auml;niobjektille TextGrid-objekti painamalla oikealla n&auml;kyv&auml;&auml;
+nappia <b>To TextGrid...</b> Nimikointiohjeita l&ouml;ytyy
+suomenkielisest&auml; <a href="http://www.helsinki.fi/puhetieteet/atk/praat/">Praat-oppaasta</a>
+.)<br>
+    <br>
+    <ul>
+      <li>Voit ehk&auml; k&auml;ytt&auml;&auml; rajaamisessa hy&ouml;dyksi 
+Praat-skripti&auml; <a href="../public/mark_pauses.praat">mark_pauses.praat</a>, 
+joka etsii intensiteetin perusteella LongSound-objektista hiljaisempia
+kohtia ja merkitsee ne tauoiksi antamiesi kriteerien (intensiteetin yl&auml;raja
+tauon aikana; hiljaisen kohdan minimikesto) perusteella. Jos tauon kriteerit
+on sopivasti m&auml;&auml;ritelty ja &auml;&auml;nite on suhteellisen hyv&auml;laatuinen,
+t&auml;m&auml; skripti saattaa rajata puhunnokset suhteellisen tarkasti ja
+s&auml;&auml;st&auml;&auml; siten jopa tuntitolkulla k&auml;sity&ouml;t&auml;.
+Sopivia kriteerej&auml; kannattaa kokeilla etuk&auml;teen. Toisaalta skripti
+on varsin hidas, joten varaudu k&auml;ym&auml;&auml;n kahvilla... (<a href="http://www.helsinki.fi/puhetieteet/atk/praat/skripti.html">Apua skriptien ajamisessa: ks. suomenkielinen Praat-opas</a> )<br>
+      </li>
+    </ul>
+    <br>
+  </li>
+  <li>a) Jollei sinulla ole tarkasti tiedossa, mit&auml; kukin &auml;&auml;nip&auml;tk&auml;
+sis&auml;lt&auml;&auml; (esimerkiksi koehenkil&ouml;n lukemien lauseiden
+listaa), mutta haluat s&auml;ilytt&auml;&auml; t&auml;m&auml;n tiedon esim.
+tiedostonimiss&auml; (ks. kohta 4 b), kuuntele ja kirjoita haluamasi teksti TextGridiin kunkin
+rajatun p&auml;tk&auml;n kohdalle.<br>
+    <br>
+b) Jos sinulla on tekstitiedosto, joka sis&auml;lt&auml;&auml; vaikkapa koehenkil&ouml;n
+lukemat lauseet (1 lause per rivi), voit k&auml;ytt&auml;&auml; skripti&auml;
+    <a href="../public/label_from_text_file.praat">label_from_text_file.praat</a>
+, joka lukee tekstitiedostosta rivin kerrallaan ja lis&auml;&auml; tekstin
+j&auml;rjestyksess&auml; TextGridiin merkittyihin segmentteihin. Huom. Jos
+joka toinen segmentti on tyhj&auml; (tauko tms.), pit&auml;&auml; tekstitiedostoonkin
+lis&auml;t&auml; tyhji&auml; rivej&auml; oikeisiin paikkoihin. <br>
+    <b>Vinkki homman todelliseen puoliautomatisointiin:</b> Jos &auml;&auml;nitiedosto
+ei vastaa t&auml;ysin tekstitiedostoa (esim. puhujasi on lukenut vahingossa
+samoja lauseita useita kertoja tai v&auml;&auml;rin), kannattaa v&auml;lill&auml;
+tarkistaa TextGridist&auml;, miss&auml; kohtaa nimikointi menee pieleen,
+editoida sitten tekstitiedostoa sopivasti, ja ajaa label-skripti uudelleen.
+T&auml;ss&auml; tapauksessa voit k&auml;ytt&auml;&auml; saman skriptin nopeampaa
+versiota <a href="../public/label_quickly_from_text_file.praat">label_quickly_from_text_file.praat</a>
+ (siihen t&auml;ytyy itse muokata oikea polku tekstitiedostolle) ja luoda
+skriptille painikkeen vaikkapa Praatin objektilistaan. N&auml;in sinun tarvitsee
+painaa vain yht&auml; nappia p&auml;ivitt&auml;&auml;ksesi TextGridiin uudet
+nimikkeet. <br>
+(<a href="http://www.helsinki.fi/puhetieteet/atk/praat/skripti.html">Apua skriptien ajamisessa: ks. suomenkielinen Praat-opas</a>
+
+)<br>
+    <br>
+c) Muussa tapauksessa kirjoita mit&auml; tahansa, esim. yksi kirjain, kunkin
+tallennettavan p&auml;tk&auml;n kohdalle TextGridiin. J&auml;t&auml; tyhjiksi
+ne kohdat, joita et halua pilkkoa erikseen.<br>
+    <br>
+  </li>
+  <li>Tallenna TextGrid-objekti varmuuden vuoksi...<br>
+    <br>
+  </li>
+  <li>Valitse Praatin objektilistasta yht&auml; aikaa sek&auml; alkuper&auml;inen pitk&auml;
+&auml;&auml;niobjekti (oltava muodossa LongSound) ett&auml; vastaava valmiiksi
+muokattu TextGrid.</li>
+</ol>
+<blockquote><b>
+a) Jos haluat ett&auml; lyhyet &auml;&auml;nitiedostot nimet&auml;&auml;n
+juoksevalla numerolla</b> (ja .aiff- tai .wav-tiedostop&auml;&auml;tteell&auml;),
+aja sitten Praat-skripti <a 
+href="../public/save_intervals_to_wav_sound_files.praat">save_intervals_to_wav_sound_files.praat</a>
+
+
+ (tekee WAVeja) tai <a 
+href="../public/save_intervals_to_aiff_sound_files.praat">save_intervals_to_aiff_sound_files.praat</a>
+
+ (tekee AIFFeja). N&auml;iss&auml; skripteiss&auml; voit antaa tiedostoille
+my&ouml;s affikseja (vaikkapa tietyn &nbsp;etuliitteen saman puhujan &auml;&auml;nitiedostoille). <br>
+(<a href="http://www.helsinki.fi/puhetieteet/atk/praat/skripti.html">Apua skriptien ajamisessa: ks. suomenkielinen Praat-opas</a>
+
+
+)<br>
+  </blockquote>
+
+    
+  <blockquote><b>
+  b) Jos taas haluat, ett&auml; lyhyiden tiedostojen nimet m&auml;&auml;r&auml;ytyv&auml;t
+vastaavien TextGridiss&auml; olevien segmenttien nimikkeiden 
+perusteella,</b> k&auml;yt&auml; Praat-skripti&auml; <a 
+href="../public/save_labeled_intervals_to_wav_sound_files.praat">save_labeled_intervals_to_wav_sound_files.praat</a>
+&nbsp;(tekee WAVeja) tai&nbsp;<a href="../public/save_labeled_intervals_to_aiff_sound_files.praat">save_labeled_intervals_to_aiff_sound_files.praat</a>
+ (tekee AIFFeja). N&auml;iss&auml; skripteiss&auml; voit antaa tiedostoille 
+my&ouml;s affikseja (vaikkapa tietyn &nbsp;etuliitteen saman puhujan &auml;&auml;nitiedostoille).
+Jos tallennuksessa k&auml;ytett&auml;v&auml;ll&auml; segmentointitasolla
+on useita samannimisi&auml; segmenttej&auml;, tiedoston nimen per&auml;&auml;n
+lis&auml;t&auml;&auml;n juokseva numero, jotteiv&auml;t n&auml;m&auml; segmentit
+tallentuisi p&auml;&auml;llekk&auml;in. Sinun on kuitenkin itse tarkistettava,
+etteiv&auml;t segmenttien nimet sis&auml;ll&auml; sellaisia merkkej&auml;,
+jotka eiv&auml;t kelpaa tiedostonimiin, tai ettei tiedostonimist&auml; tule
+liian pitki&auml;.<br>
+(<a href="http://www.helsinki.fi/puhetieteet/atk/praat/skripti.html">Apua skriptien ajamisessa: ks. suomenkielinen Praat-opas</a>
+
+
+)
+<br>
+    </blockquote>
+<br>
+<div align="Center"><b>VALMISTA TULI! :-)</b><br>
+<br>
+<a href="http://www.helsinki.fi/puhetieteet/atk/praat/">Suomenkieliseen Praat-oppaaseen</a>
+<br>
+<br>
+<a href="../index.html">Lis&auml;&auml; Praat-skriptej&auml;</a>
+<br>
+</div>
+</body></html>
