@@ -20,6 +20,7 @@
 #
 # This script is distributed under the GNU General Public License.
 # 10.12.2009 Mietta Lennes
+# 10.9.2018 Updated for the most recent Praat version (6.0.43)
 
 
 # Ask the user for some details:
@@ -38,7 +39,7 @@ endform
 
 gridname$ = selected$ ("TextGrid", 1)
 # Convert the special characters in the TextGrid into Unicode format
-Nativize
+Convert to Unicode
 total_duration = Get total duration
 start_time = Get start time
 
@@ -201,7 +202,7 @@ repeat
 
 until next_speaker = 0
 
-Genericize
+Convert to backslash trigraphs
 echo 'line' lines of conversation were written in 'filepath$'.
 
 
