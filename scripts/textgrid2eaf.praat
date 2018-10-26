@@ -46,6 +46,13 @@ indicate_interviewers_manually = 0
 # supplemented with the string ", interviewer".
 # Moreover, the participant metadata string will be preceded with the text "interviewer ".
 
+# Set the following variable to 1, if you want to remove all tiers that are labeled 
+# nothing but "original" in the TextGrid file. 
+# Note that the existing TextGrid file will be replaced with the new, smaller one!
+# (This feature can be useful, in case you used the semi-automatic alignment script which
+# created the "original" tier and the tier is no longer needed.)
+remove_original_tier = 1
+
 # Add links to WAV, M4A and/or MP4 media files by the same name as the TextGrid file, 
 # with the corresponding extension (default = add link to WAV file only)?
 include_wav = 1
@@ -128,6 +135,22 @@ participants_1$ = ""
 
 select TextGrid 'gridname$'
 
+if remove_original_tier = 1
+	### Check for tiers labeled as "original" and remove them.
+	### (These are leftovers from the semi-automatic alignment script.)
+	### The TextGrid file will be replaced.
+	for tier to numberOfTiers
+		tier_label$ = Get tier name... tier
+		if tier_label$ = "original"
+			Remove tier: tier
+			Save as text file: textGrid_file$
+			numberOfTiers = numberOfTiers - 1
+			tier = tier - 1
+		endif
+	endfor
+endif
+
+
 # Get the tier names and their number of intervals:
 for tier to numberOfTiers
 	type_number_'tier' = default_type
@@ -186,20 +209,19 @@ for tier to numberOfTiers
 	endif
 endfor
 
-select TextGrid 'gridname$'
-Edit
-
-# Ask the user to indicate which of the participants are interviewers:
-printline Number of participants: 'participants'
-for part to participants
-	part$ = participants_'part'$
-	printline - 'part$'
-	isInterviewer_'part' = 0
-endfor
-
-# Here, we ask the user to mark those participants who are playing the role of an interviewer.
-####
+# (This part is for manually marking the interviewer tiers. It can only be run in GUI!)
 if indicate_interviewers_manually = 1
+	Edit
+
+	# Ask the user to indicate which of the participants are interviewers:
+	printline Number of participants: 'participants'
+	for part to participants
+		part$ = participants_'part'$
+		printline - 'part$'
+		isInterviewer_'part' = 0
+	endfor
+	
+	####
 	beginPause: "Which of the participants are interviewers?"
 	for part to participants
 		part$ = participants_'part'$
@@ -209,21 +231,24 @@ if indicate_interviewers_manually = 1
 	for part to participants
 		isInterviewer_'part' = speaker_'part'
 	endfor
-endif
-####
+	####
 
-endeditor
+	endeditor
 
-for tier to numberOfTiers
-	participant$ = participant_'tier'$
-	for part to participants
-		# If this participant is an interviewer, get the corresponding linguistic type:
-		if participants_'part'$ = participant$ and isInterviewer_'part' = 1
-			type_title_'tier'$ = type_title_'tier'$ + ", interviewer"
-			participant_'tier'$ = "interviewer " + participant_'tier'$
-		endif
+	for tier to numberOfTiers
+		participant$ = participant_'tier'$
+		for part to participants
+			# If this participant is an interviewer, get the corresponding linguistic type:
+			if participants_'part'$ = participant$ and isInterviewer_'part' = 1
+				type_title_'tier'$ = type_title_'tier'$ + ", interviewer"
+				participant_'tier'$ = "interviewer " + participant_'tier'$
+			endif
+		endfor
 	endfor
-endfor
+
+endif
+# (After marking the interviewer tiers, the script continues normally.)
+
 
 # Collect the time stamps of all annotated intervals:
 for tier to numberOfTiers
