@@ -108,6 +108,9 @@ endform
 #------------------------------------
 # Do not edit the part below (unless you know what you are doing): 
 
+Text writing preferences: "UTF-8"
+Text reading preferences: "UTF-8"
+
 Read from file: textGrid_file$
 gridname$ = selected$ ("TextGrid")
 Convert to Unicode
