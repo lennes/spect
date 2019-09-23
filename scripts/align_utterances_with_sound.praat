@@ -7,6 +7,9 @@
 #
 # This script is distributed under GNU General Public License.
 # Mietta Lennes 16.5.2017
+# Updated and tested on 2019-09-23: 
+# Script fails on Praat 6.1.03 (
+#
 #
 
 
@@ -14,8 +17,8 @@
 outputdir$ = ""
 
 form Align the text within utterance tiers in a TextGrid 
-   word TextGrid_file /Users/lennes/Desktop/pohjantuuli/pohjantuuli_ja_aurinko_utt.TextGrid
-   word Sound_file_(WAV) /Users/lennes/Desktop/pohjantuuli/pohjantuuli_ja_aurinko.wav
+   word TextGrid_file /Users/lennes/Demo/forced_alignment_in_Praat/pohjantuuli/pohjantuuli_ja_aurinko.TextGrid
+   word Sound_file_(WAV) /Users/lennes/Demo/forced_alignment_in_Praat/pohjantuuli/pohjantuuli_ja_aurinko.wav
 	sentence Process_tier_names_containing_(empty=all) utterance
 	optionmenu Language: 9
 		option Afrikaans

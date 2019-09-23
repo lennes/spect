@@ -3,13 +3,16 @@
 # This Praat script reads lines of text from a plain text file (UTF-8) and helps the user align each 
 # speaker's turns or utterances with the corresponding sound file.
 # One LongSound object must be selected in the Objects window (use the command Open:Open long sound file...).
+# A transcript file must also exist by the same name as the sound file, but with file extension .txt.
 #
 # This script is distributed under the Gnu General Public License.
 # Mietta Lennes 1.3.2012
 #
-# 2.3.2012 (ML): Comma chunking is now switched off! Full stop, tab and repeated spaces still work if use_text_chunking = 1.
+# 2.3.2012 (ML): Comma chunking is now switched off! 
+# (Full stop, tab and repeated spaces still work if use_text_chunking = 1)
 # 
-#
+# 2019-09-23 Tested and updated for Praat v6.1.03
+
 
 form Align a conversation transcript with LongSound
 	comment Splice the original text lines into shorter chunks?
@@ -23,7 +26,7 @@ endform
 # (here, a tab character)
 default_start_string$ = "	"
 
-#---- Do you wish to automatically chunk the text on the basis of commas, full stops, tab characters and repeated space dharacters?
+#---- Do you wish to automatically chunk the text on the basis of commas, full stops, tab characters and repeated space characters?
 # 	  (Set this to 0 in case you only want coarse alignment of the entire lines of text.)
 #use_text_chunking = 1
 
