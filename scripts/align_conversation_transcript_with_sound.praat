@@ -17,7 +17,7 @@
 form Align a conversation transcript with LongSound
 	comment Splice the original text lines into shorter chunks?
 	comment (cut at full stops, tabs, or 3 or more repeated spaces)
-	boolean Use_text_chunking 1
+	boolean Use_text_chunking 0
 	comment Play suggested utterance automatically? (0=no, 1=play all, 0,8=play 0.8 sec)
 	real Play_automatically 0.8
 endform
@@ -378,7 +378,8 @@ for line from at_line to numberOfLines
 				text_dur = text_dur + expected_duration_per_character
 			elsif char$ = "	"
 				text_dur = text_dur + short_pause
-			else char$ = mid$(text$,c,3)
+			else 
+				char$ = mid$(text$,c,3)
 				if char$ = "   "
 					text_dur = text_dur + short_pause
 				endif
@@ -502,7 +503,8 @@ for line from at_line to numberOfLines
 					text_dur = text_dur + expected_duration_per_character
 				elsif char$ = "	"
 					text_dur = text_dur + short_pause
-				else char$ = mid$(text$,c,3)
+				else
+					char$ = mid$(text$,c,3)
 					if char$ = "   "
 						text_dur = text_dur + short_pause
 					endif
@@ -844,7 +846,12 @@ procedure DisplayWaitAndUpdate win_start win_end
 		printline  and finished at: 'date2$'
 		printline
 		printline The TextGrid file was saved to 'gridfile$'.
-		exit The TextGrid file was saved to 'gridfile$'.
+		select Strings transcript
+		Remove
+		select Strings pause_parameters
+		Remove
+		select LongSound 'soundname$'
+		exitScript()
 	endif
 
 endproc
