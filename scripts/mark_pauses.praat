@@ -16,7 +16,7 @@
 # 5. Then choose Run from the Run menu of the script window.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 25.1.2002
+# Mietta Lennes 25.1.2002
 #
 # Fixes:
 # - Added checks for existing boundaries and overlapping pause regions. ML 23.1.2006

@@ -1,6 +1,7 @@
 # This script runs through all TextGrid files in a corpus, checks which tiers
 # have been annotated and counts the number of annotated intervals in each tier.
 #
+# This script is distributed under GNU General Public License.
 # Mietta Lennes 1.6.2010
 # Updated 28.9.2011 (ML)
 # 2019-09-23: Tested and updated for Praat v6.1.03 (ML)

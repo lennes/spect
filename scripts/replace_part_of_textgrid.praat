@@ -11,7 +11,7 @@
 # A new TextGrid will be created that contains the result.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 11.7.2002 Mietta Lennes
+# 11.7.2002 Mietta Lennes
 #
 
 form Replace TextGrid by another

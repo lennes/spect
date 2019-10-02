@@ -1,7 +1,7 @@
 # This script extracts a tab-separated column from a text file.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 22.5.2003 Mietta Lennes
+# 22.5.2003 Mietta Lennes
 
 form Extract column from a tabular text file
    sentence Column_name Duration

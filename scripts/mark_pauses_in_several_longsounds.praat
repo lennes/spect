@@ -8,7 +8,7 @@
 # so you should also try to modify the pause detection parameters to improve the accuracy.
  
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 25.1.2002
+# Mietta Lennes 25.1.2002
 
 #******************************************************************************************************
 # DEFAULT VALUES (initialization of variables)

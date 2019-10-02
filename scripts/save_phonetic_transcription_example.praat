@@ -14,7 +14,7 @@
 # that include the tools convert and ps2pdf!!!
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 23.3.2004 Mietta Lennes
+# 23.3.2004 Mietta Lennes
 #
 
 form Where do you want to save the example picture?

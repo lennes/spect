@@ -6,7 +6,7 @@
 # The segments must be ordered according to time points.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 16.3.2002 Mietta Lennes
+# 16.3.2002 Mietta Lennes
 # A bug was fixed 30.6.2003 (segment labels were going to wrong places)
 
 form Make TextGrids for text and sound files

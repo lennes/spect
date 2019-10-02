@@ -4,7 +4,7 @@
 # e.g., drawing pictures or calculating statistics.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 22.5.2003 Mietta Lennes
+# 22.5.2003 Mietta Lennes
 #
 
 # First, ask the user for filenames and the criteria to use for

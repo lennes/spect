@@ -3,7 +3,7 @@
 # A TextGrid object must be selected in the Object list.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 10.3.2002 Mietta Lennes and Olga Bolotova
+# 10.3.2002 Mietta Lennes and Olga Bolotova
 
 form Conversion IPA - Worldbet
 comment A new IntervalTier will be added with the converted interval labels.

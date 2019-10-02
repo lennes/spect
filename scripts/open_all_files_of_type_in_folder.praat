@@ -1,7 +1,7 @@
 # This script will open all the files that have a user-specified file extension in a given folder.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 16.3.2002 Mietta Lennes
+# 16.3.2002 Mietta Lennes
 
 form Open all files in directory
 	sentence Directory ../tmp/

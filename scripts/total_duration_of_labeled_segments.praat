@@ -9,7 +9,7 @@
 # It is handy if you add a button for it in the dynamic menu.
 #
 # This script is distributed under the GNU General Public Licence.
-# Copyright 19.3.2002 Mietta Lennes
+# 19.3.2002 Mietta Lennes
 
 form Calculate the total duration of intervals
 comment Calculate total duration of intervals in tier:

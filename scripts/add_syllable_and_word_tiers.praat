@@ -4,7 +4,7 @@
 # Utterance transcriptions must be quasi-orthographic.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 31.5.2004 Mietta Lennes
+# 31.5.2004 Mietta Lennes
 
 form Add syllables and words
 	sentence Utterance_tier_name utterance

@@ -3,7 +3,7 @@
 # which will be saved in the same directory.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 25.3.2004 Mietta Lennes
+# 25.3.2004 Mietta Lennes
 
 form Make TextGrid from SoundForge file 
 	comment Give the full directory path to the .txt document:

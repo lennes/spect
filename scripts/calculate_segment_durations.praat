@@ -4,7 +4,7 @@
 # A TextGrid object needs to be selected in the Object list.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 12.3.2002 Mietta Lennes
+# 12.3.2002 Mietta Lennes
 
 # ask the user for the tier number
 form Calculate durations of labeled segments

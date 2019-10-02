@@ -5,7 +5,7 @@
 # yourself... it should be reasonably well commented! ;)
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 4.7.2003 Mietta Lennes
+# 4.7.2003 Mietta Lennes
 
 form Analyze pitch maxima from labeled segments in files
 	comment Directory of sound files

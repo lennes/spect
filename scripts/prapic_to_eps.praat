@@ -2,7 +2,7 @@
 # from a given directory and converts them into EPS files.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 22.5.2003 Mietta Lennes
+# 22.5.2003 Mietta Lennes
 
 form View Praat picture files
 	comment Give the directory of the files:

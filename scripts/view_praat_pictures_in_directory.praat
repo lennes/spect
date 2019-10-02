@@ -3,7 +3,7 @@
 # The script will loop through the files forever until you stop it.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 31.1.2003 Mietta Lennes
+# 31.1.2003 Mietta Lennes
 
 form View Praat picture files
 	comment Give the directory of the files:

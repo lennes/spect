@@ -3,17 +3,17 @@
 # Pitch curve.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 2.10.2006 Mietta Lennes
+# 2.10.2006 Mietta Lennes
 
 ######### This is where you can define various parameters for file paths, pitch extraction and drawing:
 
 form Draw pitch curves from all sound files in a directory
 	comment Sound file directory:
-	text Sound_file_directory /home/lennes/tmp/
-	sentence Sound_file_extension .aiff
+	text Sound_file_directory /Users/lennes/Demo/draw_pitch_curves/
+	sentence Sound_file_extension .wav
 	sentence Pitch_file_extension .Pitch
 	boolean Normalize_time no
-	optionmenu Frequency_scale_for_the_picture 1
+	optionmenu Frequency_scale_for_the_picture 3
 	option Linear (Hertz)
 	option Logarithmic
 	option Semitones (re 100 Hz)
@@ -30,15 +30,15 @@ form Draw pitch curves from all sound files in a directory
 	boolean Smooth_pitch_curves no
 	comment Pitch parameters:
 	real Time_step 0.01
-	real Default_minimum_pitch 75
-	real Default_maximum_pitch 500
+	real Default_minimum_pitch 90
+	real Default_maximum_pitch 400
 	comment Pitch parameter file (optional):
 	text Pitch_parameter_file_(optional) 
-	positive Minimum_pitch_for_drawing 50
+	positive Minimum_pitch_for_drawing 80
 	positive Maximum_pitch_for_drawing 400
 	comment Output files:
-	text Picture_file /home/lennes/tmp/pic.eps
-	text Pitch_data_file /home/lennes/tmp/picdata.txt
+	text Picture_file /Users/lennes/Demo/draw_pitch_curves/pic.eps
+	text Pitch_data_file /Users/lennes/Demo/draw_pitch_curves/picdata.txt
 endform
 
 # The optional pitch parameter file should be in the format:
@@ -328,7 +328,7 @@ elsif line_style = 2 and draw_as = 1
 else
 	Black
 	Plain line
-	Line width... 2
+	Line width... 4
 endif
 
 # minfreq and maxfreq are the global minimum and maximum.
@@ -375,7 +375,7 @@ else
 	Remove
 endif
 
-Line width... 2
+Line width... 4
 
 select Pitch 'filename$'
 

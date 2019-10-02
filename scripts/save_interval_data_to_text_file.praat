@@ -5,7 +5,7 @@
 # The segments will be ordered according to time points.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 17.3.2002 Mietta Lennes
+# 17.3.2002 Mietta Lennes
 
 form Make text file from an IntervalTier in the selected TextGrid object
 	comment Which tier do you want to convert to text?

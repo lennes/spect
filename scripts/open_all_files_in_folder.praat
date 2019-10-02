@@ -3,7 +3,7 @@
 # such as AIFF or WAV or Praat analysis files like TextGrid).
 # 
 # This script is distributed undr the GNU General Public License.
-# Copyright 11.3.2002 Mietta Lennes
+# 11.3.2002 Mietta Lennes
 
 form Open all files in directory
   sentence Directory ../tmp/

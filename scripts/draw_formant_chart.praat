@@ -3,7 +3,7 @@
 # TextGrid files must be .textgrid
 #
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 13.3.2002
+# Mietta Lennes 13.3.2002
 
 form Draw a vowel chart from the centre points of selected segments
 comment Give the path of the directory containing the sound and TextGrid files:

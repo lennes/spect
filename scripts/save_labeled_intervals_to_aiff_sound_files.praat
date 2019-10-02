@@ -7,7 +7,7 @@
 # NOTE: You have to take care yourself that the interval labels do not contain forbidden characters!!!!
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 8.3.2002 Mietta Lennes
+# 8.3.2002 Mietta Lennes
 #
 
 form Save intervals to small AIFF sound files

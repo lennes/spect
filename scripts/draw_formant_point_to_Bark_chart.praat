@@ -1,7 +1,7 @@
 # Draw one formant point as a one-Bark circle on a Bark-scale F1/F2 chart
 #
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 5.11.2004
+# Mietta Lennes 5.11.2004
 #
 
 form Draw one-Bark formant circle on a Bark-scale F1/F2 formant chart

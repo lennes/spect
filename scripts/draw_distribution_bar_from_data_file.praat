@@ -3,7 +3,7 @@
 # with divisions correponding to the values of the data file.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 24.4.2002 Mietta Lennes
+# 24.4.2002 Mietta Lennes
 #
 
 form Draw distribution bar from data file

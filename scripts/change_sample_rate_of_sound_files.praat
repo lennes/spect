@@ -3,7 +3,7 @@
 # (See the Praat manual for details on resampling.)
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 29.10.2003 Mietta Lennes
+# 29.10.2003 Mietta Lennes
 
 form Change sample rate in sound files
    sentence Sound_file_extension .aif

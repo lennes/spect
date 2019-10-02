@@ -2,7 +2,7 @@
 # 16 kHz WAV files (e.g., for automatic segmentation).
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 7.7.2005 Mietta Lennes
+# 7.7.2005 Mietta Lennes
 
 form Convert AIFF audio files to 16 kHz WAV
 	comment Give the directory path with AIFF sound files:

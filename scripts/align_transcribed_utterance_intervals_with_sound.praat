@@ -1,5 +1,5 @@
-# Automatic alignment of text in selected tiers in TextGrid file
-# with the corresponding sound file
+# Automatic alignment of transcribed utterances in selected tiers within a TextGrid file
+# with the corresponding sound file.
 #
 # Alignment is performed using the eSpeak based automatic 
 # aligner available in the TextGrid editor window in Praat, see, e.g., 
@@ -7,8 +7,15 @@
 #
 # This script is distributed under GNU General Public License.
 # Mietta Lennes 16.5.2017
-# Updated and tested on 2019-09-23: 
-# Script fails on Praat 6.1.03 (
+# 
+# Tested on Praat v6.1.03 on 2019-09-23
+#
+# IMPORTANT NOTE:
+# 
+# !!! Script fails with an error message
+#     due to a bug in the forced alignment command in Praat.
+#
+# --> This script is currently unusable, until Praat is fixed!
 #
 #
 

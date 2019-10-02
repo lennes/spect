@@ -4,7 +4,7 @@
 # A TextGrid object must be selected in the Object list.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 15.9.2005 Mietta Lennes
+# 15.9.2005 Mietta Lennes
 
 form Align boundaries in two interval tiers
 	comment Give the name of the first interval tier:

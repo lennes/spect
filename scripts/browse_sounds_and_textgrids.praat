@@ -2,7 +2,7 @@
 # in the same directory as this script.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 27.3.2002 Mietta Lennes
+# 27.3.2002 Mietta Lennes
 #
 
 form Browse sound files together with the corresponding TextGrid files

@@ -9,17 +9,18 @@
 # yourself... it should be reasonably well commented! ;)
 #
 # This script is distributed under the GNU General Public License.
-# Copyright 25.11.2004 Mietta Lennes
+# 25.11.2004 Mietta Lennes
+# 2019-09-24 Tested and updated on Praat v6.1.03 / ML
 
 form Analyze durations of phones and the corresponding syllables
 	comment Directory of sound files
-	text sound_directory /home/lennes/kysymykset/
-	sentence Sound_file_extension .aif
+	text sound_directory /Users/lennes/Demo/corpus_analysis_from_two_tiers/kysymykset/
+	sentence Sound_file_extension .wav
 	comment Directory of TextGrid files
-	text textGrid_directory /home/lennes/kysymykset/
+	text textGrid_directory /Users/lennes/Demo/corpus_analysis_from_two_tiers/kysymykset/
 	sentence TextGrid_file_extension .TextGrid
 	comment Full path of the resulting text file:
-	text resultfile /home/lennes/kysymykset/pitchresults.txt
+	text resultfile /Users/lennes/Demo/corpus_analysis_from_two_tiers/kysymykset/pitchresults.txt
 	comment Which tier contains the speech sound segments?
 	sentence Phone_tier phone
 	comment Which tier contains the syllable segments?
@@ -31,7 +32,6 @@ form Analyze durations of phones and the corresponding syllables
 endform
 
 # Here, you make a listing of all the sound files in a directory.
-# The example gets file names ending with ".aif" from C:\kysymykset\
 
 Create Strings as file list... list 'sound_directory$'*'sound_file_extension$'
 numberOfFiles = Get number of strings
@@ -45,7 +45,7 @@ endif
 # Write a row with column titles to the result file:
 # (remember to edit this if you add or change the analyses!)
 
-titleline$ = "Filename	Preceding phone	Phone label		Starting point	Phone duration	Pitch max in phone	Syllable label	Syllable duration'newline$'"
+titleline$ = "Filename	PrecedingPhone	PhoneLabel	StartingPoint	PhoneDuration	PitchMaxInPhone	SyllableLabel	SyllableDuration'newline$'"
 fileappend "'resultfile$'" 'titleline$'
 
 # Go through all the sound files, one by one:
@@ -65,6 +65,7 @@ for ifile to numberOfFiles
 		call GetTier 'phone_tier$' phone_tier
 		call GetTier 'syllable_tier$' syllable_tier
 		if phone_tier > 0 and syllable_tier > 0
+			Convert to Unicode
 			numberOfIntervals = Get number of intervals... phone_tier
 			preceding_label$ = ""
 			select Sound 'soundname$'
@@ -93,7 +94,7 @@ for ifile to numberOfFiles
 					# get the duration of the syllable segment:
 					syllabledur = syllend - syllstart
 					# Save result to text file:
-					resultline$ = "'soundname$'	'preceding_label$'	'label$'	'start'	'phonedur'	'pitchmax'	'syllable_label$' 'syllabledur''newline$'"
+					resultline$ = "'soundname$'	'preceding_label$'	'label$'	'start'	'phonedur'	'pitchmax'	'syllable_label$'	'syllabledur''newline$'"
 					fileappend "'resultfile$'" 'resultline$'
 					select TextGrid 'soundname$'
 				endif
@@ -129,12 +130,9 @@ procedure GetTier name$ variable$
         until tier$ = name$ or itier > numberOfTiers
         if tier$ <> name$
                 'variable$' = 0
+					printline The tier called 'name$' is missing from the file 'soundname$'!
         else
                 'variable$' = itier - 1
         endif
-
-	if 'variable$' = 0
-		printline The tier called 'name$' is missing from the file 'soundname$'!
-	endif
 
 endproc

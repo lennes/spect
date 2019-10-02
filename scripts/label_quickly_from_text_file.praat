@@ -6,7 +6,9 @@
 # you will remove later.
 # Hint: This tool is useful if you use the mark_pauses script before it!
 #
-#
+# This script is distributed under the GNU General Public License.
+# 20.7.2006 Mietta Lennes
+
 soundname$ = selected$ ("TextGrid", 1)
 select TextGrid 'soundname$'
 stringlength = 0

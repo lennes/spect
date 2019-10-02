@@ -1,7 +1,7 @@
 # Draw formant chart from selected segments according to a TextGrid object
 #
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 8.3.2002
+# Mietta Lennes 8.3.2002
 
 form Draw a vowel chart from the centre points of selected segments in a Sound object
 integer Tier 1

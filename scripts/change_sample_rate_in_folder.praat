@@ -2,7 +2,7 @@
 # See the Praat manual for details.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 10.3.2002 Mietta Lennes
+# 10.3.2002 Mietta Lennes
 
 form Change sample rate in sound files
    comment Changes will be made to ALL aiff sound files in the directory.

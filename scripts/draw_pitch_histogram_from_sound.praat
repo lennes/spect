@@ -5,7 +5,7 @@
 # Exactly one Sound object must be selected in the object window.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 30.9.2013
+# Mietta Lennes 30.9.2013
 
 form Draw F0 histogram from Sound object
    comment Give the F0 analysis parameters:

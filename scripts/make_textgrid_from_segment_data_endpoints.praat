@@ -9,7 +9,7 @@
 # please use the script called make_textgrid_from_segment_data.praat instead!
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 30.6.2003 Mietta Lennes
+# 30.6.2003 Mietta Lennes
 
 form Make TextGrids for text and sound files
 	sentence Directory ../tmp/

@@ -1,7 +1,7 @@
 # This script opens a text file containing one number per line and draws a histogram of the data.
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 22.5.2003 Mietta Lennes
+# 22.5.2003 Mietta Lennes
 
 form Draw histogram from numeric data in a text file
    comment Give the path of the text file:

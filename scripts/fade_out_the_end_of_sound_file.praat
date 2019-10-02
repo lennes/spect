@@ -2,7 +2,7 @@
 # by filtering it with the latter half of a Hanning window.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 25.9.2003
+# Mietta Lennes 25.9.2003
 #
 
 form Fade out the end of a sound file

@@ -3,7 +3,7 @@
 # The goal is to find the F0 distribution for a single speaker.
 #
 # This script is distributed under the GNU General Public License.
-# Copyright Mietta Lennes 12.6.2002
+# Mietta Lennes 12.6.2002
 
 form Basic F0 statistics from utterances in a LongSound object
 	positive Minimum_pitch_(Hz) 50

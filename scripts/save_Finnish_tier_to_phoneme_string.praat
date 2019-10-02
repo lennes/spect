@@ -5,7 +5,8 @@
 # NG is &
 # (the above system correspond to the automatic segmentation tool in Helsinki University of Technology)
 #
-# Copyright 17.4.2002 Mietta Lennes
+# This script is distributed under the GNU General Public License.
+# 17.4.2002 Mietta Lennes
 
 
 form Convert Finnish tier text to phonemes and save to text file

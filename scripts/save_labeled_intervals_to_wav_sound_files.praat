@@ -7,12 +7,12 @@
 # NOTE: You have to take care yourself that the interval labels do not contain forbidden characters!!!!
 # 
 # This script is distributed under the GNU General Public License.
-# Copyright 8.3.2002 Mietta Lennes
+# 8.3.2002 Mietta Lennes
 #
 
 form Save intervals to small WAV sound files
 	comment Which IntervalTier in this TextGrid would you like to process?
-	integer Tier 2
+	integer Tier 1
 	comment Starting and ending at which interval? 
 	integer Start_from 1
 	integer End_at_(0=last) 0
@@ -22,9 +22,9 @@ form Save intervals to small WAV sound files
 	comment Give a small margin for the files if you like:
 	positive Margin_(seconds) 0.01
 	comment Give the folder where to save the sound files:
-	sentence Folder /home/lennes/tmp/
+	sentence Folder /Users/lennes/Demo/save_labeled_intervals/exported/
 	comment Give an optional prefix for all filenames:
-	sentence Prefix TMP_
+	sentence Prefix Test_
 	comment Give an optional suffix for all filenames (.wav will be added anyway):
 	sentence Suffix 
 endform
