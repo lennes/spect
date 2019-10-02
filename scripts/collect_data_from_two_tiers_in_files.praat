@@ -38,8 +38,8 @@ numberOfFiles = Get number of strings
 
 # Check if the result file exists:
 if fileReadable (resultfile$)
-	pause The result file 'resultfile$' already exists! Do you want to overwrite it?
-	filedelete "'resultfile$'"
+	pause Overwrite the old result file 'resultfile$'?
+	deleteFile: resultfile$
 endif
 
 # Write a row with column titles to the result file:
