@@ -8,16 +8,13 @@
 # This script is distributed under GNU General Public License.
 # Mietta Lennes 16.5.2017
 # 
-# Tested on Praat v6.1.03 on 2019-09-23
+# Updated 2019-10-16: Tested to work on Praat v6.1.04
 #
-# IMPORTANT NOTE:
+# NB:
+# In older Praat versions (<= v6.1.03), the script may fail 
+# due to a bug in the forced alignment command in Praat.
+# The bug was fixed in Praat 6.1.04.
 # 
-# !!! Script fails with an error message
-#     due to a bug in the forced alignment command in Praat.
-#
-# --> This script is currently unusable, until Praat is fixed!
-#
-#
 
 
 # This is where the aligned TextGrid will be written:
