@@ -1,7 +1,18 @@
 # This script will draw pitch curves from all sound files in a given directory to the
-# same picture. A tabulated text file will be saved with data from each
-# Pitch curve.
+# same picture. A tabulated text file will be saved with basic statistics 
+# calculated (min, max, mean, median, stdev) from each Pitch curve.
+# The pitch scale can be selected (Hz, logHz, semitone, mel, ERB). 
+# Curves can be drawn as plain lines or speckled, and either in only black lines or in 
+# different colours and line types. 
+# You may let Praat "normalize time" in order to compare the general contour shapes, 
+# or you may choose to plot the curves in absolute time scale.
+# For advanced users: The curves can be drawn in different colours according to, e.g., 
+# speaker ID or other group code that is contained in the file name. (See instructions 
+# within the script file.)
 # 
+# Requirements: A directory with sound and/or Pitch files, each representing one unit that 
+# is to be plotted (e.g., a sentence).
+#
 # This script is distributed under the GNU General Public License.
 # 2.10.2006 Mietta Lennes
 
