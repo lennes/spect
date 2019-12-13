@@ -9,6 +9,7 @@
 # Mietta Lennes 16.5.2017
 # 
 # Updated 2019-10-16: Tested to work on Praat v6.1.04
+# Updated 2019-12-13: Added all supported languages to the option menu
 #
 # NB:
 # In older Praat versions (<= v6.1.03), the script may fail 
@@ -24,7 +25,7 @@ form Align the text within utterance tiers in a TextGrid
    word TextGrid_file /Users/lennes/Demo/forced_alignment_in_Praat/pohjantuuli/pohjantuuli_ja_aurinko.TextGrid
    word Sound_file_(WAV) /Users/lennes/Demo/forced_alignment_in_Praat/pohjantuuli/pohjantuuli_ja_aurinko.wav
 	sentence Process_tier_names_containing_(empty=all) utterance
-	optionmenu Language: 9
+	optionmenu Language: 30
 		option Afrikaans
 		option Albanian
 		option Amharic-test
