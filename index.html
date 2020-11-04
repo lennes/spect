@@ -53,6 +53,7 @@ from a long sound file</a>&nbsp;
        <ul>
        <li><a href="#import">Import segmentation data</A>
        <li><a href="#labeling">Labeling and TextGrid management</a>
+       <li><a href="#forced-alignment">Automatic forced alignment of words and phonemes <br/>within previously annotated utterances</a>
 		</ul>
        </td>
        <td valign="Top" width="25%">   
@@ -597,6 +598,22 @@ length of the string contained in the original interval.<br>
 <em>Tip:</em> Save the script file into the same directory with the TextGrid files and 
 leave the directory box empty when running the script. This will ensure a smooth run 
 :-) 
+       </td>
+     </tr><tr>
+     <tr>
+	     <td valign="Top"><a name="forced-alignment"></a><b><a 
+href="scripts/align_transcribed_utterance_intervals_with_sound.praat" download>align_transcribed_utterance_intervals_with_sound.praat</a>
+       </b><br>
+       </td>
+       <td valign="Top">Full path to a sound file and to the corresponding TextGrid file with an interval tier that includes the transcribed utterances<br>
+       </td>
+       <td valign="Top">Two new tiers (labeled as ../word and ../phoneme) inserted in the TextGrid object
+       </td>
+       <td valign="Top">6.1.04<br>
+	       NB: In older Praat versions (<= v6.1.03), the script may fail due to a bug in the corresponding forced alignment command in Praat. The bug was fixed in Praat 6.1.04.
+       </td>
+       <td valign="Top">This script automatically aligns the words and phonemes within annotated utterances in a TextGrid. The language of the transcribed utterances can be selected by the user. The script automatically passes through each annotated interval in the given tier and runs the forced alignment command on them. New tiers will be created with the segmentation of words and phonemes suggested by eSpeak.
+	       <br>The script utilizes the eSpeak based automatic aligner that is available in the TextGrid editor window in Praat, see, e.g., http://info.linguistlist.org/aardvarc/resources/AARDVARC_Boersma_Abstract.pdf.
        </td>
      </tr><tr>
      <tr>
