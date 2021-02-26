@@ -8,6 +8,7 @@
 # This script is distributed under GNU General Public License.
 # Mietta Lennes 16.5.2017
 # 
+# Updated 2021-02-26: List of languages according to Praat v6.1.31
 # Updated 2019-10-16: Tested to work on Praat v6.1.04
 # Updated 2019-12-13: Added all supported languages to the option menu
 #
@@ -16,6 +17,9 @@
 # due to a bug in the forced alignment command in Praat.
 # The bug was fixed in Praat 6.1.04.
 # 
+# Note also:
+# The list of languages may not be compatible with Praat versions < v6.1.31!
+#
 
 
 # This is where the aligned TextGrid will be written:
@@ -25,10 +29,11 @@ form Align the text within utterance tiers in a TextGrid
    word TextGrid_file /Users/lennes/Demo/forced_alignment_in_Praat/pohjantuuli/pohjantuuli_ja_aurinko.TextGrid
    word Sound_file_(WAV) /Users/lennes/Demo/forced_alignment_in_Praat/pohjantuuli/pohjantuuli_ja_aurinko.wav
 	sentence Process_tier_names_containing_(empty=all) utterance
-	optionmenu Language: 30
+	optionmenu Language: 31
 		option Afrikaans
 		option Albanian
-		option Amharic-test
+		option Amharic
+		option Arabic
 		option Aragonese
 		option Armenian (East Armenia)
 		option Armenian (West Armenia)
@@ -102,7 +107,6 @@ form Align the text within utterance tiers in a TextGrid
 		option Persian
 		option Persian (Pinglish)
 		option Polish
-		option Azerbaijani
 		option Portuguese (Brazil)
 		option Portuguese (Portugal)
 		option Punjabi
