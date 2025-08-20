@@ -51,6 +51,7 @@ from a long sound file</a>&nbsp;
        <b>Annotate and
        manage TextGrids &nbsp;&nbsp;&nbsp; &rarr;</b>
        <ul>
+       <li><a href="#review-transcripts">Review plain-text transcripts with audio</A>
        <li><a href="#import">Import segmentation data</A>
        <li><a href="#labeling">Labeling and TextGrid management</a>
        <li><a href="#forced-alignment">Automatic forced alignment of words and phonemes <br/>within previously annotated utterances</a>
@@ -448,6 +449,39 @@ command  in the editor window. Use it for extracting sound samples for presentat
 <div align="Right"><a href="#top">Go up</a>
  <br>
  </div>
+
+<h3><a name="review-transcripts"></a>
+Reviewing transcripts</h3>
+ 
+<table cellpadding="2" cellspacing="2" border="1" width="100%">
+   <tbody>
+     <tr>
+       <td valign="Top"><i><b>File name<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Requirements<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Output<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Praat version<br>
+       </b></i></td>
+       <td valign="Top"><i><b>Description</b></i><br>
+       </td>
+     </tr>
+     <tr>
+       <td valign="Top">       
+      <h4><a href="scripts/review_transcripts_with_audio.praat" download> review_transcripts_with_audio.praat</a>
+       </h4>
+       </td>
+       <td valign="Top">No selections required. Pairs of audio files (e.g., .wav or .flac) and plain text files (e.g., .txt) need to be saved in the same folder or in separate folders, with matching file names for each pair.<br>
+       </td>
+       <td valign="Top">A tab-separated text file including the details of each file pair: timestamp, file name; optionally, audio file duration and the number of lines and words; and the comments typed by the user for each file.<br>
+       </td>
+       <td valign="Top">6.4.34<br>
+       </td>
+       <td valign="Top">Each plain text transcript file will be opened as a Praat Strings object and the corresponding audio file as a Sound object, one pair of files at a time. The user will be prompted for comments and feedback regarding the files. It is possible to use the Praat Sound editor window for listening to the audio in order to check the transcript. This script can be useful in a corpus transcription project where someone is generating transcripts that need to be reviewed and potentially approved for further processing. The transcripts can also be reviewed in smaller batches.<br>
+       </td>
+     </tr>
+  
  
 <h3><a name="labeling"></a>
  Labeling and TextGrid management</h3>
